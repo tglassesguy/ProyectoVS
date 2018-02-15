@@ -1,1 +1,2 @@
 C:\Users\javic\Documents\ProyectoVS\ProyectoMatematicasDiscretas\ProyectoMatematicasDiscretas\bin\Debug\ProyectoMatematicasDiscretas.exe.config
+C:\Users\JUAN FELIPE\ProyectoVS\ProyectoMatematicasDiscretas\ProyectoMatematicasDiscretas\bin\Debug\ProyectoMatematicasDiscretas.exe.config
