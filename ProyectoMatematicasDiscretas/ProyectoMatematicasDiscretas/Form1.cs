@@ -17,5 +17,9 @@ namespace ProyectoMatematicasDiscretas
             InitializeComponent();
         }
 
+        private void btmCargarInicio_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
