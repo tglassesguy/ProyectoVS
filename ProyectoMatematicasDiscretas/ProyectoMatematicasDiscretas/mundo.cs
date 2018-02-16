@@ -8,22 +8,20 @@ using System.IO;
 
 namespace ProyectoMatematicasDiscretas
 {
-    public static int MAX_NOMBRE = 10;
+   /* public static int MAX_NOMBRE = 10;
     public static int MAX_NUMEROPAQUETES = 10;
     public static int MAX_NUMEROPAQUETES = 10;
 
 
     FileStream archivo;
 
+    */
+
     class mundo
     {
 
     }
-
-    public void aviso()
-    {
-     
-    }
+   
 }
 
 

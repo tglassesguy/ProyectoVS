@@ -69,8 +69,7 @@
             // lblSubtitulo
             // 
             this.lblSubtitulo.AutoSize = true;
-            this.lblSubtitulo.Location = new System.Drawing.Point(38, 67);
-            this.lblSubtitulo.Location = new System.Drawing.Point(40, 99);
+            this.lblSubtitulo.Location = new System.Drawing.Point(40, 70);
             this.lblSubtitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSubtitulo.Name = "lblSubtitulo";
             this.lblSubtitulo.Size = new System.Drawing.Size(109, 13);
@@ -80,9 +79,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 93);
-            this.label1.Location = new System.Drawing.Point(40, 126);
-
+            this.label1.Location = new System.Drawing.Point(40, 97);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
@@ -92,8 +89,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 119);
-            this.label2.Location = new System.Drawing.Point(40, 152);
+            this.label2.Location = new System.Drawing.Point(40, 123);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
@@ -103,8 +99,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 145);
-            this.label3.Location = new System.Drawing.Point(40, 177);
+            this.label3.Location = new System.Drawing.Point(40, 148);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 13);
@@ -114,7 +109,6 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(38, 169);
             this.label4.Location = new System.Drawing.Point(40, 202);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
@@ -124,9 +118,8 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(123, 91);
-            this.textBox1.Location = new System.Drawing.Point(126, 124);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Location = new System.Drawing.Point(126, 95);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(105, 20);
             this.textBox1.TabIndex = 6;
@@ -134,27 +127,24 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(123, 117);
-            this.textBox2.Location = new System.Drawing.Point(126, 150);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Location = new System.Drawing.Point(126, 121);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(105, 20);
             this.textBox2.TabIndex = 7;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(123, 142);
-            this.textBox3.Location = new System.Drawing.Point(126, 175);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Location = new System.Drawing.Point(126, 146);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(105, 20);
             this.textBox3.TabIndex = 8;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(123, 167);
             this.textBox4.Location = new System.Drawing.Point(126, 199);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(105, 20);
             this.textBox4.TabIndex = 9;
@@ -162,7 +152,7 @@
             // btmAgregarFinal
             // 
             this.btmAgregarFinal.Location = new System.Drawing.Point(373, 109);
-            this.btmAgregarFinal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btmAgregarFinal.Margin = new System.Windows.Forms.Padding(2);
             this.btmAgregarFinal.Name = "btmAgregarFinal";
             this.btmAgregarFinal.Size = new System.Drawing.Size(91, 34);
             this.btmAgregarFinal.TabIndex = 11;
@@ -172,7 +162,7 @@
             // btmAgregarAUnPunto
             // 
             this.btmAgregarAUnPunto.Location = new System.Drawing.Point(366, 148);
-            this.btmAgregarAUnPunto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btmAgregarAUnPunto.Margin = new System.Windows.Forms.Padding(2);
             this.btmAgregarAUnPunto.Name = "btmAgregarAUnPunto";
             this.btmAgregarAUnPunto.Size = new System.Drawing.Size(104, 34);
             this.btmAgregarAUnPunto.TabIndex = 12;
@@ -182,7 +172,7 @@
             // txtPosicionAgregar
             // 
             this.txtPosicionAgregar.Location = new System.Drawing.Point(475, 156);
-            this.txtPosicionAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPosicionAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.txtPosicionAgregar.Name = "txtPosicionAgregar";
             this.txtPosicionAgregar.Size = new System.Drawing.Size(33, 20);
             this.txtPosicionAgregar.TabIndex = 13;
@@ -190,7 +180,7 @@
             // btmAgregarInicio
             // 
             this.btmAgregarInicio.Location = new System.Drawing.Point(373, 67);
-            this.btmAgregarInicio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btmAgregarInicio.Margin = new System.Windows.Forms.Padding(2);
             this.btmAgregarInicio.Name = "btmAgregarInicio";
             this.btmAgregarInicio.Size = new System.Drawing.Size(91, 37);
             this.btmAgregarInicio.TabIndex = 14;
@@ -208,7 +198,7 @@
             this.pnlPanelCargar.Controls.Add(this.btmAnterior);
             this.pnlPanelCargar.Controls.Add(this.btmCargarFinal);
             this.pnlPanelCargar.Location = new System.Drawing.Point(8, 197);
-            this.pnlPanelCargar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlPanelCargar.Margin = new System.Windows.Forms.Padding(2);
             this.pnlPanelCargar.Name = "pnlPanelCargar";
             this.pnlPanelCargar.Size = new System.Drawing.Size(545, 232);
             this.pnlPanelCargar.TabIndex = 15;
@@ -219,7 +209,7 @@
             this.panel1.Controls.Add(this.lblTotal);
             this.panel1.Controls.Add(this.RITtextos);
             this.panel1.Location = new System.Drawing.Point(213, 10);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(328, 210);
             this.panel1.TabIndex = 7;
@@ -237,7 +227,7 @@
             // RITtextos
             // 
             this.RITtextos.Location = new System.Drawing.Point(20, 15);
-            this.RITtextos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RITtextos.Margin = new System.Windows.Forms.Padding(2);
             this.RITtextos.Name = "RITtextos";
             this.RITtextos.Size = new System.Drawing.Size(260, 161);
             this.RITtextos.TabIndex = 0;
@@ -246,7 +236,7 @@
             // btmBusqueda
             // 
             this.btmBusqueda.Location = new System.Drawing.Point(146, 209);
-            this.btmBusqueda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btmBusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.btmBusqueda.Name = "btmBusqueda";
             this.btmBusqueda.Size = new System.Drawing.Size(27, 18);
             this.btmBusqueda.TabIndex = 6;
@@ -256,7 +246,7 @@
             // txtBusqueda
             // 
             this.txtBusqueda.Location = new System.Drawing.Point(12, 209);
-            this.txtBusqueda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(128, 20);
             this.txtBusqueda.TabIndex = 5;
@@ -264,7 +254,7 @@
             // btmCargarInicio
             // 
             this.btmCargarInicio.Location = new System.Drawing.Point(16, 22);
-            this.btmCargarInicio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btmCargarInicio.Margin = new System.Windows.Forms.Padding(2);
             this.btmCargarInicio.Name = "btmCargarInicio";
             this.btmCargarInicio.Size = new System.Drawing.Size(154, 57);
             this.btmCargarInicio.TabIndex = 4;
@@ -275,7 +265,7 @@
             // btmSiguiente
             // 
             this.btmSiguiente.Location = new System.Drawing.Point(94, 171);
-            this.btmSiguiente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btmSiguiente.Margin = new System.Windows.Forms.Padding(2);
             this.btmSiguiente.Name = "btmSiguiente";
             this.btmSiguiente.Size = new System.Drawing.Size(78, 26);
             this.btmSiguiente.TabIndex = 3;
@@ -285,7 +275,7 @@
             // btmAnterior
             // 
             this.btmAnterior.Location = new System.Drawing.Point(12, 171);
-            this.btmAnterior.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btmAnterior.Margin = new System.Windows.Forms.Padding(2);
             this.btmAnterior.Name = "btmAnterior";
             this.btmAnterior.Size = new System.Drawing.Size(78, 26);
             this.btmAnterior.TabIndex = 2;
@@ -295,7 +285,7 @@
             // btmCargarFinal
             // 
             this.btmCargarFinal.Location = new System.Drawing.Point(16, 84);
-            this.btmCargarFinal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btmCargarFinal.Margin = new System.Windows.Forms.Padding(2);
             this.btmCargarFinal.Name = "btmCargarFinal";
             this.btmCargarFinal.Size = new System.Drawing.Size(154, 57);
             this.btmCargarFinal.TabIndex = 1;
@@ -322,7 +312,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblSubtitulo);
             this.Controls.Add(this.lblTitulo);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.pnlPanelCargar.ResumeLayout(false);

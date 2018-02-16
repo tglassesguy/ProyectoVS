@@ -17,8 +17,6 @@ namespace ProyectoMatematicasDiscretas
         public Form1()
         {
             InitializeComponent();
-
-            mundo casa = new mundo();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
