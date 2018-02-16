@@ -34,26 +34,26 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
             this.btmAgregarFinal = new System.Windows.Forms.Button();
             this.btmAgregarAUnPunto = new System.Windows.Forms.Button();
             this.txtPosicionAgregar = new System.Windows.Forms.TextBox();
             this.btmAgregarInicio = new System.Windows.Forms.Button();
             this.pnlPanelCargar = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.RITtextos = new System.Windows.Forms.RichTextBox();
             this.btmBusqueda = new System.Windows.Forms.Button();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.btmCargarInicio = new System.Windows.Forms.Button();
             this.btmSiguiente = new System.Windows.Forms.Button();
             this.btmAnterior = new System.Windows.Forms.Button();
             this.btmCargarFinal = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.RITtextos = new System.Windows.Forms.RichTextBox();
             this.labAgregar = new System.Windows.Forms.Label();
             this.labCargar = new System.Windows.Forms.Label();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.pnlPanelCargar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -120,42 +120,34 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Precio (pqt) :";
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(142, 90);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(105, 20);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtNombre.Location = new System.Drawing.Point(142, 90);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(105, 20);
+            this.txtNombre.TabIndex = 6;
+            this.txtNombre.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // txtCantidad
             // 
-            this.textBox2.Location = new System.Drawing.Point(142, 116);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(105, 20);
-            this.textBox2.TabIndex = 7;
+            this.txtCantidad.Location = new System.Drawing.Point(142, 141);
+            this.txtCantidad.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(105, 20);
+            this.txtCantidad.TabIndex = 8;
             // 
-            // textBox3
+            // txtPrecio
             // 
-            this.textBox3.Location = new System.Drawing.Point(142, 141);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(105, 20);
-            this.textBox3.TabIndex = 8;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(142, 170);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(105, 20);
-            this.textBox4.TabIndex = 9;
+            this.txtPrecio.Location = new System.Drawing.Point(142, 170);
+            this.txtPrecio.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(105, 20);
+            this.txtPrecio.TabIndex = 9;
             // 
             // btmAgregarFinal
             // 
-            this.btmAgregarFinal.Location = new System.Drawing.Point(318, 121);
+            this.btmAgregarFinal.Location = new System.Drawing.Point(337, 126);
             this.btmAgregarFinal.Margin = new System.Windows.Forms.Padding(2);
             this.btmAgregarFinal.Name = "btmAgregarFinal";
             this.btmAgregarFinal.Size = new System.Drawing.Size(209, 27);
@@ -166,7 +158,7 @@
             // 
             // btmAgregarAUnPunto
             // 
-            this.btmAgregarAUnPunto.Location = new System.Drawing.Point(318, 153);
+            this.btmAgregarAUnPunto.Location = new System.Drawing.Point(337, 158);
             this.btmAgregarAUnPunto.Margin = new System.Windows.Forms.Padding(2);
             this.btmAgregarAUnPunto.Name = "btmAgregarAUnPunto";
             this.btmAgregarAUnPunto.Size = new System.Drawing.Size(126, 27);
@@ -177,7 +169,7 @@
             // 
             // txtPosicionAgregar
             // 
-            this.txtPosicionAgregar.Location = new System.Drawing.Point(448, 157);
+            this.txtPosicionAgregar.Location = new System.Drawing.Point(467, 162);
             this.txtPosicionAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.txtPosicionAgregar.Name = "txtPosicionAgregar";
             this.txtPosicionAgregar.Size = new System.Drawing.Size(79, 20);
@@ -186,7 +178,7 @@
             // 
             // btmAgregarInicio
             // 
-            this.btmAgregarInicio.Location = new System.Drawing.Point(318, 90);
+            this.btmAgregarInicio.Location = new System.Drawing.Point(337, 95);
             this.btmAgregarInicio.Margin = new System.Windows.Forms.Padding(2);
             this.btmAgregarInicio.Name = "btmAgregarInicio";
             this.btmAgregarInicio.Size = new System.Drawing.Size(209, 27);
@@ -210,37 +202,6 @@
             this.pnlPanelCargar.Size = new System.Drawing.Size(545, 216);
             this.pnlPanelCargar.TabIndex = 15;
             this.pnlPanelCargar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPanelCargar_Paint);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Controls.Add(this.lblTotal);
-            this.panel1.Controls.Add(this.RITtextos);
-            this.panel1.Location = new System.Drawing.Point(221, 225);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(334, 216);
-            this.panel1.TabIndex = 7;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(310, 197);
-            this.lblTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(16, 13);
-            this.lblTotal.TabIndex = 1;
-            this.lblTotal.Text = "---";
-            // 
-            // RITtextos
-            // 
-            this.RITtextos.Location = new System.Drawing.Point(0, 0);
-            this.RITtextos.Margin = new System.Windows.Forms.Padding(2);
-            this.RITtextos.Name = "RITtextos";
-            this.RITtextos.Size = new System.Drawing.Size(334, 197);
-            this.RITtextos.TabIndex = 0;
-            this.RITtextos.Text = "";
             // 
             // btmBusqueda
             // 
@@ -304,10 +265,41 @@
             this.btmCargarFinal.UseVisualStyleBackColor = true;
             this.btmCargarFinal.Click += new System.EventHandler(this.btmCargarFinal_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.lblTotal);
+            this.panel1.Controls.Add(this.RITtextos);
+            this.panel1.Location = new System.Drawing.Point(221, 225);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(334, 216);
+            this.panel1.TabIndex = 7;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(310, 197);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(16, 13);
+            this.lblTotal.TabIndex = 1;
+            this.lblTotal.Text = "---";
+            // 
+            // RITtextos
+            // 
+            this.RITtextos.Location = new System.Drawing.Point(0, 0);
+            this.RITtextos.Margin = new System.Windows.Forms.Padding(2);
+            this.RITtextos.Name = "RITtextos";
+            this.RITtextos.Size = new System.Drawing.Size(334, 197);
+            this.RITtextos.TabIndex = 0;
+            this.RITtextos.Text = "";
+            // 
             // labAgregar
             // 
             this.labAgregar.AutoSize = true;
-            this.labAgregar.Location = new System.Drawing.Point(285, 67);
+            this.labAgregar.Location = new System.Drawing.Point(304, 72);
             this.labAgregar.Name = "labAgregar";
             this.labAgregar.Size = new System.Drawing.Size(105, 13);
             this.labAgregar.TabIndex = 16;
@@ -323,11 +315,19 @@
             this.labCargar.TabIndex = 17;
             this.labCargar.Text = "Cargar registro:";
             // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Location = new System.Drawing.Point(142, 115);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(181, 20);
+            this.dtpFecha.TabIndex = 18;
+            // 
             // GUIPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(558, 467);
+            this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.labCargar);
             this.Controls.Add(this.labAgregar);
             this.Controls.Add(this.panel1);
@@ -336,10 +336,9 @@
             this.Controls.Add(this.txtPosicionAgregar);
             this.Controls.Add(this.btmAgregarAUnPunto);
             this.Controls.Add(this.btmAgregarFinal);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPrecio);
+            this.Controls.Add(this.txtCantidad);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -367,10 +366,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtCantidad;
+        private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Button btmAgregarFinal;
         private System.Windows.Forms.Button btmAgregarAUnPunto;
         private System.Windows.Forms.TextBox txtPosicionAgregar;
@@ -387,6 +385,7 @@
         private System.Windows.Forms.RichTextBox RITtextos;
         private System.Windows.Forms.Label labAgregar;
         private System.Windows.Forms.Label labCargar;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
     }
 }
 

@@ -8,15 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.IO;
+
 
 namespace ProyectoMatematicasDiscretas
 {
     public partial class GUIPrincipal : Form
     {
+        mundo codigo;
 
         public GUIPrincipal()
         {
             InitializeComponent();
+            codigo = new mundo();
+
+            if(!File.Exists(codigo.darRuta()))
+            {
+                File.Create(codigo.darRuta());
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -61,7 +70,8 @@ namespace ProyectoMatematicasDiscretas
 
         private void btmAgregarInicio_Click(object sender, EventArgs e)
         {
-
+            codigo.agregarAlInicio(txtNombre.Text,dtpFecha.Value,txtCantidad.Text,txtPrecio.Text);
+            MessageBox.Show("Se ha guardado el registro en el inicio del archivo");
         }
 
         private void btmAgregarAUnPunto_Click(object sender, EventArgs e)
