@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace ProyectoMatematicasDiscretas
 {
-    public partial class Form1 : Form
+    public partial class GUIPrincipal : Form
     {
 
-        public Form1()
+        public GUIPrincipal()
         {
             InitializeComponent();
         }
@@ -55,6 +55,36 @@ namespace ProyectoMatematicasDiscretas
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btmAgregarInicio_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btmAgregarAUnPunto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSubtitulo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPosicionAgregar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btmAgregarFinal_Click(object sender, EventArgs e)
         {
 
         }
