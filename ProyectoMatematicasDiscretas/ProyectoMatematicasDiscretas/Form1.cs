@@ -28,5 +28,35 @@ namespace ProyectoMatematicasDiscretas
         {
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btmAnterior_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btmCargarFinal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlPanelCargar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btmSiguiente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

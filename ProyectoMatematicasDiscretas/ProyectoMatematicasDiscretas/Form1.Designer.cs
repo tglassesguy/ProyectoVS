@@ -69,7 +69,7 @@
             // lblSubtitulo
             // 
             this.lblSubtitulo.AutoSize = true;
-            this.lblSubtitulo.Location = new System.Drawing.Point(40, 70);
+            this.lblSubtitulo.Location = new System.Drawing.Point(39, 72);
             this.lblSubtitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSubtitulo.Name = "lblSubtitulo";
             this.lblSubtitulo.Size = new System.Drawing.Size(109, 13);
@@ -79,7 +79,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 97);
+            this.label1.Location = new System.Drawing.Point(39, 99);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
@@ -89,7 +89,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 123);
+            this.label2.Location = new System.Drawing.Point(39, 125);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
@@ -99,7 +99,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 148);
+            this.label3.Location = new System.Drawing.Point(39, 150);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 13);
@@ -118,7 +118,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(126, 95);
+            this.textBox1.Location = new System.Drawing.Point(140, 94);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(105, 20);
@@ -127,7 +127,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(126, 121);
+            this.textBox2.Location = new System.Drawing.Point(140, 118);
             this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(105, 20);
@@ -135,7 +135,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(126, 146);
+            this.textBox3.Location = new System.Drawing.Point(140, 143);
             this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(105, 20);
@@ -190,34 +190,35 @@
             // pnlPanelCargar
             // 
             this.pnlPanelCargar.BackColor = System.Drawing.Color.LightGray;
-            this.pnlPanelCargar.Controls.Add(this.panel1);
             this.pnlPanelCargar.Controls.Add(this.btmBusqueda);
             this.pnlPanelCargar.Controls.Add(this.txtBusqueda);
             this.pnlPanelCargar.Controls.Add(this.btmCargarInicio);
             this.pnlPanelCargar.Controls.Add(this.btmSiguiente);
             this.pnlPanelCargar.Controls.Add(this.btmAnterior);
             this.pnlPanelCargar.Controls.Add(this.btmCargarFinal);
-            this.pnlPanelCargar.Location = new System.Drawing.Point(8, 197);
+            this.pnlPanelCargar.Location = new System.Drawing.Point(8, 199);
             this.pnlPanelCargar.Margin = new System.Windows.Forms.Padding(2);
             this.pnlPanelCargar.Name = "pnlPanelCargar";
-            this.pnlPanelCargar.Size = new System.Drawing.Size(545, 232);
+            this.pnlPanelCargar.Size = new System.Drawing.Size(545, 235);
             this.pnlPanelCargar.TabIndex = 15;
+            this.pnlPanelCargar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPanelCargar_Paint);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.Controls.Add(this.lblTotal);
             this.panel1.Controls.Add(this.RITtextos);
-            this.panel1.Location = new System.Drawing.Point(213, 10);
+            this.panel1.Location = new System.Drawing.Point(219, 197);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(328, 210);
+            this.panel1.Size = new System.Drawing.Size(334, 216);
             this.panel1.TabIndex = 7;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(269, 188);
+            this.lblTotal.Location = new System.Drawing.Point(310, 197);
             this.lblTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(16, 13);
@@ -226,37 +227,37 @@
             // 
             // RITtextos
             // 
-            this.RITtextos.Location = new System.Drawing.Point(20, 15);
+            this.RITtextos.Location = new System.Drawing.Point(0, 0);
             this.RITtextos.Margin = new System.Windows.Forms.Padding(2);
             this.RITtextos.Name = "RITtextos";
-            this.RITtextos.Size = new System.Drawing.Size(260, 161);
+            this.RITtextos.Size = new System.Drawing.Size(334, 197);
             this.RITtextos.TabIndex = 0;
             this.RITtextos.Text = "";
             // 
             // btmBusqueda
             // 
-            this.btmBusqueda.Location = new System.Drawing.Point(146, 209);
+            this.btmBusqueda.Location = new System.Drawing.Point(179, 193);
             this.btmBusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.btmBusqueda.Name = "btmBusqueda";
-            this.btmBusqueda.Size = new System.Drawing.Size(27, 18);
+            this.btmBusqueda.Size = new System.Drawing.Size(31, 19);
             this.btmBusqueda.TabIndex = 6;
             this.btmBusqueda.Text = "♀";
             this.btmBusqueda.UseVisualStyleBackColor = true;
             // 
             // txtBusqueda
             // 
-            this.txtBusqueda.Location = new System.Drawing.Point(12, 209);
+            this.txtBusqueda.Location = new System.Drawing.Point(2, 193);
             this.txtBusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(128, 20);
+            this.txtBusqueda.Size = new System.Drawing.Size(210, 20);
             this.txtBusqueda.TabIndex = 5;
             // 
             // btmCargarInicio
             // 
-            this.btmCargarInicio.Location = new System.Drawing.Point(16, 22);
+            this.btmCargarInicio.Location = new System.Drawing.Point(3, 5);
             this.btmCargarInicio.Margin = new System.Windows.Forms.Padding(2);
             this.btmCargarInicio.Name = "btmCargarInicio";
-            this.btmCargarInicio.Size = new System.Drawing.Size(154, 57);
+            this.btmCargarInicio.Size = new System.Drawing.Size(206, 58);
             this.btmCargarInicio.TabIndex = 4;
             this.btmCargarInicio.Text = "Inicio";
             this.btmCargarInicio.UseVisualStyleBackColor = true;
@@ -264,39 +265,43 @@
             // 
             // btmSiguiente
             // 
-            this.btmSiguiente.Location = new System.Drawing.Point(94, 171);
+            this.btmSiguiente.Location = new System.Drawing.Point(105, 167);
             this.btmSiguiente.Margin = new System.Windows.Forms.Padding(2);
             this.btmSiguiente.Name = "btmSiguiente";
-            this.btmSiguiente.Size = new System.Drawing.Size(78, 26);
+            this.btmSiguiente.Size = new System.Drawing.Size(105, 26);
             this.btmSiguiente.TabIndex = 3;
             this.btmSiguiente.Text = "--->";
             this.btmSiguiente.UseVisualStyleBackColor = true;
+            this.btmSiguiente.Click += new System.EventHandler(this.btmSiguiente_Click);
             // 
             // btmAnterior
             // 
-            this.btmAnterior.Location = new System.Drawing.Point(12, 171);
+            this.btmAnterior.Location = new System.Drawing.Point(2, 167);
             this.btmAnterior.Margin = new System.Windows.Forms.Padding(2);
             this.btmAnterior.Name = "btmAnterior";
-            this.btmAnterior.Size = new System.Drawing.Size(78, 26);
+            this.btmAnterior.Size = new System.Drawing.Size(105, 26);
             this.btmAnterior.TabIndex = 2;
             this.btmAnterior.Text = "<---";
             this.btmAnterior.UseVisualStyleBackColor = true;
+            this.btmAnterior.Click += new System.EventHandler(this.btmAnterior_Click);
             // 
             // btmCargarFinal
             // 
-            this.btmCargarFinal.Location = new System.Drawing.Point(16, 84);
+            this.btmCargarFinal.Location = new System.Drawing.Point(2, 61);
             this.btmCargarFinal.Margin = new System.Windows.Forms.Padding(2);
             this.btmCargarFinal.Name = "btmCargarFinal";
-            this.btmCargarFinal.Size = new System.Drawing.Size(154, 57);
+            this.btmCargarFinal.Size = new System.Drawing.Size(207, 61);
             this.btmCargarFinal.TabIndex = 1;
             this.btmCargarFinal.Text = "Final";
             this.btmCargarFinal.UseVisualStyleBackColor = true;
+            this.btmCargarFinal.Click += new System.EventHandler(this.btmCargarFinal_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 434);
+            this.ClientSize = new System.Drawing.Size(558, 443);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlPanelCargar);
             this.Controls.Add(this.btmAgregarInicio);
             this.Controls.Add(this.txtPosicionAgregar);
@@ -315,6 +320,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.pnlPanelCargar.ResumeLayout(false);
             this.pnlPanelCargar.PerformLayout();
             this.panel1.ResumeLayout(false);
