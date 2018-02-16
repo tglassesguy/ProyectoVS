@@ -69,7 +69,11 @@
             // lblSubtitulo
             // 
             this.lblSubtitulo.AutoSize = true;
+<<<<<<< HEAD
             this.lblSubtitulo.Location = new System.Drawing.Point(38, 67);
+=======
+            this.lblSubtitulo.Location = new System.Drawing.Point(40, 99);
+>>>>>>> codigoMundo
             this.lblSubtitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSubtitulo.Name = "lblSubtitulo";
             this.lblSubtitulo.Size = new System.Drawing.Size(109, 13);
@@ -79,7 +83,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
+<<<<<<< HEAD
             this.label1.Location = new System.Drawing.Point(38, 93);
+=======
+            this.label1.Location = new System.Drawing.Point(40, 126);
+>>>>>>> codigoMundo
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
@@ -89,7 +97,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
+<<<<<<< HEAD
             this.label2.Location = new System.Drawing.Point(38, 119);
+=======
+            this.label2.Location = new System.Drawing.Point(40, 152);
+>>>>>>> codigoMundo
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
@@ -99,7 +111,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
+<<<<<<< HEAD
             this.label3.Location = new System.Drawing.Point(38, 145);
+=======
+            this.label3.Location = new System.Drawing.Point(40, 177);
+>>>>>>> codigoMundo
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 13);
@@ -109,7 +125,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
+<<<<<<< HEAD
             this.label4.Location = new System.Drawing.Point(38, 169);
+=======
+            this.label4.Location = new System.Drawing.Point(40, 202);
+>>>>>>> codigoMundo
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 13);
@@ -118,15 +138,24 @@
             // 
             // textBox1
             // 
+<<<<<<< HEAD
             this.textBox1.Location = new System.Drawing.Point(123, 91);
+=======
+            this.textBox1.Location = new System.Drawing.Point(126, 124);
+>>>>>>> codigoMundo
             this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(105, 20);
             this.textBox1.TabIndex = 6;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
+<<<<<<< HEAD
             this.textBox2.Location = new System.Drawing.Point(123, 117);
+=======
+            this.textBox2.Location = new System.Drawing.Point(126, 150);
+>>>>>>> codigoMundo
             this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(105, 20);
@@ -134,7 +163,11 @@
             // 
             // textBox3
             // 
+<<<<<<< HEAD
             this.textBox3.Location = new System.Drawing.Point(123, 142);
+=======
+            this.textBox3.Location = new System.Drawing.Point(126, 175);
+>>>>>>> codigoMundo
             this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(105, 20);
@@ -142,7 +175,11 @@
             // 
             // textBox4
             // 
+<<<<<<< HEAD
             this.textBox4.Location = new System.Drawing.Point(123, 167);
+=======
+            this.textBox4.Location = new System.Drawing.Point(126, 199);
+>>>>>>> codigoMundo
             this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(105, 20);
@@ -296,11 +333,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(558, 434);
+<<<<<<< HEAD
             this.Controls.Add(this.pnlPanelCargar);
             this.Controls.Add(this.btmAgregarInicio);
             this.Controls.Add(this.txtPosicionAgregar);
             this.Controls.Add(this.btmAgregarAUnPunto);
             this.Controls.Add(this.btmAgregarFinal);
+=======
+>>>>>>> codigoMundo
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
