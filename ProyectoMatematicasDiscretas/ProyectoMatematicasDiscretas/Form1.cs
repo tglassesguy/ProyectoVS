@@ -26,6 +26,11 @@ namespace ProyectoMatematicasDiscretas
             {
                 File.Create(codigo.darRuta());
             }
+            else
+            {
+                codigo.darNumRegistros();
+            }
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -47,7 +52,19 @@ namespace ProyectoMatematicasDiscretas
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
+            if(codigo.darNumRegistros() == 0)
+            {
+                lblTotal.Text = "No se encuentran registros en la base de datos.";
+            }
+            else
+            {
+                actualizarRegistros();
+            }
+        }
 
+        public void actualizarRegistros()
+        {
+            lblTotal.Text = "Número de registros: " + codigo.darNumRegistros() + ".";
         }
 
         private void btmAnterior_Click(object sender, EventArgs e)
@@ -57,7 +74,8 @@ namespace ProyectoMatematicasDiscretas
 
         private void btmCargarFinal_Click(object sender, EventArgs e)
         {
-
+            pintarEnPantalla(codigo.cargarRegistro(codigo.darNumRegistros()));
+            MessageBox.Show("Se ha cargado el ultimo registros");
         }
 
         private void pnlPanelCargar_Paint(object sender, PaintEventArgs e)
@@ -78,6 +96,8 @@ namespace ProyectoMatematicasDiscretas
         private void btmAgregarInicio_Click(object sender, EventArgs e)
         {
             codigo.agregarAlInicio(txtNombre.Text,dtpFecha.Value,txtCantidad.Text,txtPrecio.Text);
+            actualizarRegistros();
+            
             MessageBox.Show("Se ha guardado el registro en el inicio del archivo");
         }
 
@@ -103,7 +123,10 @@ namespace ProyectoMatematicasDiscretas
 
         private void btmAgregarFinal_Click(object sender, EventArgs e)
         {
+            codigo.agregarAlFinal(txtNombre.Text, dtpFecha.Value, txtCantidad.Text, txtPrecio.Text);
+            actualizarRegistros();
 
+            MessageBox.Show("Se ha guardado el registro al final del archivo.");
         }
 
         private void RITtextos_TextChanged(object sender, EventArgs e)

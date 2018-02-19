@@ -13,16 +13,23 @@ namespace ProyectoMatematicasDiscretas
         public static int MAX_NOMBRE = 10;  
         public static int MAX_CANTIDAD = 10;
         public static int MAX_PRECIO = 10;
-        public static int MAX_FECHA = 11;
+        public static int MAX_FECHA = 10;
         public static String RUTA = "D:/DATA.txt";
         public static int TAM_DATA = MAX_NOMBRE + MAX_CANTIDAD + MAX_PRECIO + MAX_FECHA;
 
         FileStream archivo;
-       // private  int numRegistros = 0;
+        private int numRegistros = 0;
 
         public String darRuta()
         {
             return RUTA;
+        }
+
+        public int darNumRegistros()
+        {
+            FileInfo temp = new FileInfo(RUTA);
+            numRegistros = (int)temp.Length / TAM_DATA;
+            return numRegistros;
         }
      
         public String ajustarData(String text, int max)
@@ -52,6 +59,22 @@ namespace ProyectoMatematicasDiscretas
             archivo = new FileStream(RUTA, FileMode.Open);
 
             archivo.Seek(0, SeekOrigin.Begin);
+            archivo.Write(Encoding.ASCII.GetBytes(data), 0, data.Length);
+            archivo.Close();
+        }
+
+        public void agregarAlFinal(String nombre, DateTime fecha, String cantidad, String precio)
+        {
+            String data = "";
+
+            data += ajustarData(nombre, MAX_NOMBRE);
+            data += ajustarData(fecha.ToString(), MAX_FECHA);
+            data += ajustarData(cantidad, MAX_CANTIDAD);
+            data += ajustarData(precio, MAX_PRECIO);
+
+            archivo = new FileStream(RUTA, FileMode.Open);
+
+            archivo.Seek(0, SeekOrigin.End);
             archivo.Write(Encoding.ASCII.GetBytes(data), 0, data.Length);
             archivo.Close();
         }

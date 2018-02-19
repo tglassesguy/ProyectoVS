@@ -281,7 +281,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(310, 197);
+            this.lblTotal.Location = new System.Drawing.Point(10, 199);
             this.lblTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(16, 13);
@@ -290,6 +290,7 @@
             // 
             // RITtextos
             // 
+            this.RITtextos.Enabled = false;
             this.RITtextos.Location = new System.Drawing.Point(0, 0);
             this.RITtextos.Margin = new System.Windows.Forms.Padding(2);
             this.RITtextos.Name = "RITtextos";
