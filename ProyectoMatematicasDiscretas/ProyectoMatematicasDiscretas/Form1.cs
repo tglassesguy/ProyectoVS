@@ -103,7 +103,10 @@ namespace ProyectoMatematicasDiscretas
 
         private void btmAgregarAUnPunto_Click(object sender, EventArgs e)
         {
-
+            int pos = int.Parse(txtBusqueda.Text);
+            codigo.Modificar(txtNombre.Text, dtpFecha.Value, txtCantidad.Text, txtPrecio.Text, pos);
+            pintarEnPantalla(codigo.cargarRegistro(Int32.Parse(txtBusqueda.Text)));
+            MessageBox.Show("Se ha modificado el registro exitosamente.");
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -145,6 +148,29 @@ namespace ProyectoMatematicasDiscretas
             {
                 pintarEnPantalla(codigo.cargarRegistro(Int32.Parse(txtBusqueda.Text)));
             }
+        }
+
+        private void lblTitulo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btmModificar_Click(object sender, EventArgs e)
+        {
+            int pos = int.Parse(txtBusqueda.Text);
+            String[] datos = codigo.subirInformacion(pos);
+            txtNombre.Text = datos[0];
+            dtpFecha.Value = Convert.ToDateTime(datos[1]);
+            txtCantidad.Text = datos[2];
+            txtPrecio.Text = datos[3];
+
+            MessageBox.Show("Se ha cargado el registro: " + pos + " para su modificación.");
+
+            btmFinalizarModifcacion.Enabled = true;
+            btmCargarInicio.Enabled = false;
+            btmCargarFinal.Enabled = false;
+            btmAgregarInicio.Enabled = false;
+            btmAgregarFinal.Enabled = false;
         }
     }
 }

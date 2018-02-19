@@ -31,6 +31,39 @@ namespace ProyectoMatematicasDiscretas
             numRegistros = (int)temp.Length / TAM_DATA;
             return numRegistros;
         }
+
+        public String[] subirInformacion(int pos)
+        {
+            String[] array = new String[4];
+            String data = cargarRegistro(pos);
+            String temp1, temp2, temp3, temp4;
+            temp1 = data.Substring(0,MAX_NOMBRE);
+            array[0] = temp1.Trim(' ');
+            temp2 = data.Substring(MAX_NOMBRE, MAX_FECHA);
+            array[1] = temp2.Trim(' ');
+            temp3 = data.Substring(MAX_NOMBRE + MAX_FECHA, MAX_CANTIDAD);
+            array[2] = temp3.Trim(' ');
+            temp4 = data.Substring(MAX_NOMBRE + MAX_FECHA + MAX_CANTIDAD, MAX_PRECIO);
+            array[3] = temp4.Trim(' ');
+           
+            return array;
+            
+        }
+        public void Modificar(String nombre, DateTime fecha, String cantidad, String precio , int pos)
+        {
+            String data = "";
+
+            data += ajustarData(nombre, MAX_NOMBRE);
+            data += ajustarData(fecha.ToString(), MAX_FECHA);
+            data += ajustarData(cantidad, MAX_CANTIDAD);
+            data += ajustarData(precio, MAX_PRECIO);
+
+            archivo = new FileStream(RUTA, FileMode.Open);
+
+            archivo.Seek(TAM_DATA * (pos - 1), SeekOrigin.Begin);
+            archivo.Write(Encoding.ASCII.GetBytes(data), 0, data.Length);
+            archivo.Close();
+        }
      
         public String ajustarData(String text, int max)
         {

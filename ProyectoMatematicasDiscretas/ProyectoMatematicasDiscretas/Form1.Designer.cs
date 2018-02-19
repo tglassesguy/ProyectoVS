@@ -38,8 +38,7 @@
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.btmAgregarFinal = new System.Windows.Forms.Button();
-            this.btmAgregarAUnPunto = new System.Windows.Forms.Button();
-            this.txtPosicionAgregar = new System.Windows.Forms.TextBox();
+            this.btmFinalizarModifcacion = new System.Windows.Forms.Button();
             this.btmAgregarInicio = new System.Windows.Forms.Button();
             this.pnlPanelCargar = new System.Windows.Forms.Panel();
             this.btmBusqueda = new System.Windows.Forms.Button();
@@ -54,6 +53,7 @@
             this.labAgregar = new System.Windows.Forms.Label();
             this.labCargar = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.btmModificar = new System.Windows.Forms.Button();
             this.pnlPanelCargar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -62,12 +62,13 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(125, 9);
+            this.lblTitulo.Location = new System.Drawing.Point(125, 12);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(308, 42);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "DULCERIA MIAU";
+            this.lblTitulo.Click += new System.EventHandler(this.lblTitulo_Click);
             // 
             // lblSubtitulo
             // 
@@ -156,25 +157,17 @@
             this.btmAgregarFinal.UseVisualStyleBackColor = true;
             this.btmAgregarFinal.Click += new System.EventHandler(this.btmAgregarFinal_Click);
             // 
-            // btmAgregarAUnPunto
+            // btmFinalizarModifcacion
             // 
-            this.btmAgregarAUnPunto.Location = new System.Drawing.Point(337, 158);
-            this.btmAgregarAUnPunto.Margin = new System.Windows.Forms.Padding(2);
-            this.btmAgregarAUnPunto.Name = "btmAgregarAUnPunto";
-            this.btmAgregarAUnPunto.Size = new System.Drawing.Size(126, 27);
-            this.btmAgregarAUnPunto.TabIndex = 12;
-            this.btmAgregarAUnPunto.Text = "Agregar a un punto";
-            this.btmAgregarAUnPunto.UseVisualStyleBackColor = true;
-            this.btmAgregarAUnPunto.Click += new System.EventHandler(this.btmAgregarAUnPunto_Click);
-            // 
-            // txtPosicionAgregar
-            // 
-            this.txtPosicionAgregar.Location = new System.Drawing.Point(467, 162);
-            this.txtPosicionAgregar.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPosicionAgregar.Name = "txtPosicionAgregar";
-            this.txtPosicionAgregar.Size = new System.Drawing.Size(79, 20);
-            this.txtPosicionAgregar.TabIndex = 13;
-            this.txtPosicionAgregar.TextChanged += new System.EventHandler(this.txtPosicionAgregar_TextChanged);
+            this.btmFinalizarModifcacion.Enabled = false;
+            this.btmFinalizarModifcacion.Location = new System.Drawing.Point(337, 158);
+            this.btmFinalizarModifcacion.Margin = new System.Windows.Forms.Padding(2);
+            this.btmFinalizarModifcacion.Name = "btmFinalizarModifcacion";
+            this.btmFinalizarModifcacion.Size = new System.Drawing.Size(209, 27);
+            this.btmFinalizarModifcacion.TabIndex = 12;
+            this.btmFinalizarModifcacion.Text = "Finalizar modificación";
+            this.btmFinalizarModifcacion.UseVisualStyleBackColor = true;
+            this.btmFinalizarModifcacion.Click += new System.EventHandler(this.btmAgregarAUnPunto_Click);
             // 
             // btmAgregarInicio
             // 
@@ -190,6 +183,7 @@
             // pnlPanelCargar
             // 
             this.pnlPanelCargar.BackColor = System.Drawing.Color.LightGray;
+            this.pnlPanelCargar.Controls.Add(this.btmModificar);
             this.pnlPanelCargar.Controls.Add(this.btmBusqueda);
             this.pnlPanelCargar.Controls.Add(this.txtBusqueda);
             this.pnlPanelCargar.Controls.Add(this.btmCargarInicio);
@@ -235,7 +229,7 @@
             // 
             // btmSiguiente
             // 
-            this.btmSiguiente.Location = new System.Drawing.Point(103, 125);
+            this.btmSiguiente.Location = new System.Drawing.Point(103, 165);
             this.btmSiguiente.Margin = new System.Windows.Forms.Padding(2);
             this.btmSiguiente.Name = "btmSiguiente";
             this.btmSiguiente.Size = new System.Drawing.Size(105, 26);
@@ -246,7 +240,7 @@
             // 
             // btmAnterior
             // 
-            this.btmAnterior.Location = new System.Drawing.Point(2, 125);
+            this.btmAnterior.Location = new System.Drawing.Point(2, 165);
             this.btmAnterior.Margin = new System.Windows.Forms.Padding(2);
             this.btmAnterior.Name = "btmAnterior";
             this.btmAnterior.Size = new System.Drawing.Size(105, 26);
@@ -325,6 +319,16 @@
             this.dtpFecha.Size = new System.Drawing.Size(181, 20);
             this.dtpFecha.TabIndex = 18;
             // 
+            // btmModificar
+            // 
+            this.btmModificar.Location = new System.Drawing.Point(3, 122);
+            this.btmModificar.Name = "btmModificar";
+            this.btmModificar.Size = new System.Drawing.Size(204, 38);
+            this.btmModificar.TabIndex = 7;
+            this.btmModificar.Text = "Modificar";
+            this.btmModificar.UseVisualStyleBackColor = true;
+            this.btmModificar.Click += new System.EventHandler(this.btmModificar_Click);
+            // 
             // GUIPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -336,8 +340,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlPanelCargar);
             this.Controls.Add(this.btmAgregarInicio);
-            this.Controls.Add(this.txtPosicionAgregar);
-            this.Controls.Add(this.btmAgregarAUnPunto);
+            this.Controls.Add(this.btmFinalizarModifcacion);
             this.Controls.Add(this.btmAgregarFinal);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.txtCantidad);
@@ -373,8 +376,7 @@
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Button btmAgregarFinal;
-        private System.Windows.Forms.Button btmAgregarAUnPunto;
-        private System.Windows.Forms.TextBox txtPosicionAgregar;
+        private System.Windows.Forms.Button btmFinalizarModifcacion;
         private System.Windows.Forms.Button btmAgregarInicio;
         private System.Windows.Forms.Panel pnlPanelCargar;
         private System.Windows.Forms.Button btmSiguiente;
@@ -389,6 +391,7 @@
         private System.Windows.Forms.Label labAgregar;
         private System.Windows.Forms.Label labCargar;
         private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.Button btmModificar;
     }
 }
 
