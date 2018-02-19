@@ -212,6 +212,7 @@
             this.btmBusqueda.TabIndex = 6;
             this.btmBusqueda.Text = "♀";
             this.btmBusqueda.UseVisualStyleBackColor = true;
+            this.btmBusqueda.Click += new System.EventHandler(this.btmBusqueda_Click);
             // 
             // txtBusqueda
             // 
@@ -295,6 +296,7 @@
             this.RITtextos.Size = new System.Drawing.Size(334, 197);
             this.RITtextos.TabIndex = 0;
             this.RITtextos.Text = "";
+            this.RITtextos.TextChanged += new System.EventHandler(this.RITtextos_TextChanged);
             // 
             // labAgregar
             // 

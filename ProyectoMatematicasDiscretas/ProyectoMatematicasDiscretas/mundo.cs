@@ -10,19 +10,21 @@ namespace ProyectoMatematicasDiscretas
 {
     class mundo
     {
-        public static int MAX_NOMBRE = 10;
+        public static int MAX_NOMBRE = 10;  
         public static int MAX_CANTIDAD = 10;
         public static int MAX_PRECIO = 10;
         public static int MAX_FECHA = 11;
         public static String RUTA = "D:/DATA.txt";
+        public static int TAM_DATA = MAX_NOMBRE + MAX_CANTIDAD + MAX_PRECIO + MAX_FECHA;
 
         FileStream archivo;
+       // private  int numRegistros = 0;
 
         public String darRuta()
         {
             return RUTA;
         }
-
+     
         public String ajustarData(String text, int max)
         {
             String mensaje;
@@ -52,6 +54,25 @@ namespace ProyectoMatematicasDiscretas
             archivo.Seek(0, SeekOrigin.Begin);
             archivo.Write(Encoding.ASCII.GetBytes(data), 0, data.Length);
             archivo.Close();
+        }
+
+        public String cargarRegistro(int pos)
+        {
+            byte[] info = new byte[TAM_DATA];
+            archivo = new FileStream(RUTA, FileMode.Open);
+            if( pos == 0)
+            {
+                archivo.Seek(0, SeekOrigin.Begin);
+            }
+            else
+            {
+                archivo.Seek(TAM_DATA * (pos - 1), SeekOrigin.Begin);
+            }
+            archivo.Read(info, 0, TAM_DATA);
+            archivo.Close();
+
+            return System.Text.Encoding.Default.GetString(info);
+            
         }
 
         
