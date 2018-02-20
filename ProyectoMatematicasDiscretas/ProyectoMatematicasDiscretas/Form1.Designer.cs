@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblTitulo = new System.Windows.Forms.Label();
             this.lblSubtitulo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,26 +53,19 @@
             this.labAgregar = new System.Windows.Forms.Label();
             this.labCargar = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.panelTitulo = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.pnlPanelCargar.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panelTitulo.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(125, 12);
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(308, 42);
-            this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "DULCERIA MIAU";
-            this.lblTitulo.Click += new System.EventHandler(this.lblTitulo_Click);
             // 
             // lblSubtitulo
             // 
             this.lblSubtitulo.AutoSize = true;
-            this.lblSubtitulo.Location = new System.Drawing.Point(11, 67);
+            this.lblSubtitulo.Location = new System.Drawing.Point(2, 9);
             this.lblSubtitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSubtitulo.Name = "lblSubtitulo";
             this.lblSubtitulo.Size = new System.Drawing.Size(109, 13);
@@ -84,7 +76,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 90);
+            this.label1.Location = new System.Drawing.Point(32, 32);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
@@ -94,7 +86,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 116);
+            this.label2.Location = new System.Drawing.Point(32, 58);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
@@ -104,7 +96,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(41, 141);
+            this.label3.Location = new System.Drawing.Point(32, 83);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 13);
@@ -114,7 +106,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(42, 170);
+            this.label4.Location = new System.Drawing.Point(33, 112);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 13);
@@ -123,32 +115,32 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(142, 90);
+            this.txtNombre.Location = new System.Drawing.Point(133, 32);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(105, 20);
+            this.txtNombre.Size = new System.Drawing.Size(181, 20);
             this.txtNombre.TabIndex = 6;
             this.txtNombre.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(142, 141);
+            this.txtCantidad.Location = new System.Drawing.Point(133, 83);
             this.txtCantidad.Margin = new System.Windows.Forms.Padding(2);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(105, 20);
+            this.txtCantidad.Size = new System.Drawing.Size(181, 20);
             this.txtCantidad.TabIndex = 8;
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(142, 170);
+            this.txtPrecio.Location = new System.Drawing.Point(133, 112);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(105, 20);
+            this.txtPrecio.Size = new System.Drawing.Size(181, 20);
             this.txtPrecio.TabIndex = 9;
             // 
             // btmAgregarFinal
             // 
-            this.btmAgregarFinal.Location = new System.Drawing.Point(337, 126);
+            this.btmAgregarFinal.Location = new System.Drawing.Point(383, 69);
             this.btmAgregarFinal.Margin = new System.Windows.Forms.Padding(2);
             this.btmAgregarFinal.Name = "btmAgregarFinal";
             this.btmAgregarFinal.Size = new System.Drawing.Size(209, 27);
@@ -160,7 +152,7 @@
             // btmFinalizarModifcacion
             // 
             this.btmFinalizarModifcacion.Enabled = false;
-            this.btmFinalizarModifcacion.Location = new System.Drawing.Point(337, 158);
+            this.btmFinalizarModifcacion.Location = new System.Drawing.Point(383, 101);
             this.btmFinalizarModifcacion.Margin = new System.Windows.Forms.Padding(2);
             this.btmFinalizarModifcacion.Name = "btmFinalizarModifcacion";
             this.btmFinalizarModifcacion.Size = new System.Drawing.Size(209, 27);
@@ -171,7 +163,7 @@
             // 
             // btmAgregarInicio
             // 
-            this.btmAgregarInicio.Location = new System.Drawing.Point(337, 95);
+            this.btmAgregarInicio.Location = new System.Drawing.Point(383, 38);
             this.btmAgregarInicio.Margin = new System.Windows.Forms.Padding(2);
             this.btmAgregarInicio.Name = "btmAgregarInicio";
             this.btmAgregarInicio.Size = new System.Drawing.Size(209, 27);
@@ -182,24 +174,25 @@
             // 
             // pnlPanelCargar
             // 
-            this.pnlPanelCargar.BackColor = System.Drawing.Color.LightGray;
+            this.pnlPanelCargar.BackColor = System.Drawing.Color.White;
             this.pnlPanelCargar.Controls.Add(this.btmModificar);
             this.pnlPanelCargar.Controls.Add(this.btmBusqueda);
+            this.pnlPanelCargar.Controls.Add(this.labCargar);
             this.pnlPanelCargar.Controls.Add(this.txtBusqueda);
             this.pnlPanelCargar.Controls.Add(this.btmCargarInicio);
             this.pnlPanelCargar.Controls.Add(this.btmSiguiente);
             this.pnlPanelCargar.Controls.Add(this.btmAnterior);
             this.pnlPanelCargar.Controls.Add(this.btmCargarFinal);
-            this.pnlPanelCargar.Location = new System.Drawing.Point(10, 225);
+            this.pnlPanelCargar.Location = new System.Drawing.Point(10, 258);
             this.pnlPanelCargar.Margin = new System.Windows.Forms.Padding(2);
             this.pnlPanelCargar.Name = "pnlPanelCargar";
-            this.pnlPanelCargar.Size = new System.Drawing.Size(545, 216);
+            this.pnlPanelCargar.Size = new System.Drawing.Size(607, 242);
             this.pnlPanelCargar.TabIndex = 15;
             this.pnlPanelCargar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPanelCargar_Paint);
             // 
             // btmModificar
             // 
-            this.btmModificar.Location = new System.Drawing.Point(3, 122);
+            this.btmModificar.Location = new System.Drawing.Point(3, 137);
             this.btmModificar.Name = "btmModificar";
             this.btmModificar.Size = new System.Drawing.Size(204, 38);
             this.btmModificar.TabIndex = 7;
@@ -209,7 +202,7 @@
             // 
             // btmBusqueda
             // 
-            this.btmBusqueda.Location = new System.Drawing.Point(176, 191);
+            this.btmBusqueda.Location = new System.Drawing.Point(176, 206);
             this.btmBusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.btmBusqueda.Name = "btmBusqueda";
             this.btmBusqueda.Size = new System.Drawing.Size(31, 22);
@@ -220,7 +213,7 @@
             // 
             // txtBusqueda
             // 
-            this.txtBusqueda.Location = new System.Drawing.Point(2, 192);
+            this.txtBusqueda.Location = new System.Drawing.Point(2, 207);
             this.txtBusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(203, 20);
@@ -228,7 +221,7 @@
             // 
             // btmCargarInicio
             // 
-            this.btmCargarInicio.Location = new System.Drawing.Point(2, 4);
+            this.btmCargarInicio.Location = new System.Drawing.Point(2, 19);
             this.btmCargarInicio.Margin = new System.Windows.Forms.Padding(2);
             this.btmCargarInicio.Name = "btmCargarInicio";
             this.btmCargarInicio.Size = new System.Drawing.Size(206, 58);
@@ -240,7 +233,7 @@
             // btmSiguiente
             // 
             this.btmSiguiente.Enabled = false;
-            this.btmSiguiente.Location = new System.Drawing.Point(103, 165);
+            this.btmSiguiente.Location = new System.Drawing.Point(103, 180);
             this.btmSiguiente.Margin = new System.Windows.Forms.Padding(2);
             this.btmSiguiente.Name = "btmSiguiente";
             this.btmSiguiente.Size = new System.Drawing.Size(105, 26);
@@ -252,7 +245,7 @@
             // btmAnterior
             // 
             this.btmAnterior.Enabled = false;
-            this.btmAnterior.Location = new System.Drawing.Point(2, 165);
+            this.btmAnterior.Location = new System.Drawing.Point(2, 180);
             this.btmAnterior.Margin = new System.Windows.Forms.Padding(2);
             this.btmAnterior.Name = "btmAnterior";
             this.btmAnterior.Size = new System.Drawing.Size(105, 26);
@@ -263,7 +256,7 @@
             // 
             // btmCargarFinal
             // 
-            this.btmCargarFinal.Location = new System.Drawing.Point(2, 60);
+            this.btmCargarFinal.Location = new System.Drawing.Point(2, 75);
             this.btmCargarFinal.Margin = new System.Windows.Forms.Padding(2);
             this.btmCargarFinal.Name = "btmCargarFinal";
             this.btmCargarFinal.Size = new System.Drawing.Size(206, 61);
@@ -277,10 +270,10 @@
             this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.Controls.Add(this.lblTotal);
             this.panel1.Controls.Add(this.RITtextos);
-            this.panel1.Location = new System.Drawing.Point(221, 225);
+            this.panel1.Location = new System.Drawing.Point(221, 273);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(334, 216);
+            this.panel1.Size = new System.Drawing.Size(389, 216);
             this.panel1.TabIndex = 7;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -298,10 +291,10 @@
             // 
             this.RITtextos.Enabled = false;
             this.RITtextos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RITtextos.Location = new System.Drawing.Point(0, 0);
+            this.RITtextos.Location = new System.Drawing.Point(2, 2);
             this.RITtextos.Margin = new System.Windows.Forms.Padding(2);
             this.RITtextos.Name = "RITtextos";
-            this.RITtextos.Size = new System.Drawing.Size(334, 197);
+            this.RITtextos.Size = new System.Drawing.Size(387, 197);
             this.RITtextos.TabIndex = 0;
             this.RITtextos.Text = "";
             this.RITtextos.TextChanged += new System.EventHandler(this.RITtextos_TextChanged);
@@ -309,7 +302,7 @@
             // labAgregar
             // 
             this.labAgregar.AutoSize = true;
-            this.labAgregar.Location = new System.Drawing.Point(304, 72);
+            this.labAgregar.Location = new System.Drawing.Point(350, 15);
             this.labAgregar.Name = "labAgregar";
             this.labAgregar.Size = new System.Drawing.Size(105, 13);
             this.labAgregar.TabIndex = 16;
@@ -319,7 +312,7 @@
             // labCargar
             // 
             this.labCargar.AutoSize = true;
-            this.labCargar.Location = new System.Drawing.Point(9, 210);
+            this.labCargar.Location = new System.Drawing.Point(4, 4);
             this.labCargar.Name = "labCargar";
             this.labCargar.Size = new System.Drawing.Size(78, 13);
             this.labCargar.TabIndex = 17;
@@ -327,33 +320,64 @@
             // 
             // dtpFecha
             // 
-            this.dtpFecha.Location = new System.Drawing.Point(142, 115);
+            this.dtpFecha.Location = new System.Drawing.Point(133, 57);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(181, 20);
             this.dtpFecha.TabIndex = 18;
+            // 
+            // panelTitulo
+            // 
+            this.panelTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
+            this.panelTitulo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelTitulo.Controls.Add(this.label5);
+            this.panelTitulo.Location = new System.Drawing.Point(-8, 0);
+            this.panelTitulo.Name = "panelTitulo";
+            this.panelTitulo.Size = new System.Drawing.Size(642, 102);
+            this.panelTitulo.TabIndex = 19;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.lblSubtitulo);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.dtpFecha);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.labAgregar);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.txtNombre);
+            this.panel2.Controls.Add(this.txtCantidad);
+            this.panel2.Controls.Add(this.btmAgregarInicio);
+            this.panel2.Controls.Add(this.txtPrecio);
+            this.panel2.Controls.Add(this.btmFinalizarModifcacion);
+            this.panel2.Controls.Add(this.btmAgregarFinal);
+            this.panel2.Location = new System.Drawing.Point(10, 108);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(607, 147);
+            this.panel2.TabIndex = 20;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Script MT Bold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.Control;
+            this.label5.Location = new System.Drawing.Point(163, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(315, 58);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Dulceria Miau";
             // 
             // GUIPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 467);
-            this.Controls.Add(this.dtpFecha);
-            this.Controls.Add(this.labCargar);
-            this.Controls.Add(this.labAgregar);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(631, 511);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelTitulo);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlPanelCargar);
-            this.Controls.Add(this.btmAgregarInicio);
-            this.Controls.Add(this.btmFinalizarModifcacion);
-            this.Controls.Add(this.btmAgregarFinal);
-            this.Controls.Add(this.txtPrecio);
-            this.Controls.Add(this.txtCantidad);
-            this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblSubtitulo);
-            this.Controls.Add(this.lblTitulo);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GUIPrincipal";
             this.Text = "Heladería Miau";
@@ -362,14 +386,15 @@
             this.pnlPanelCargar.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panelTitulo.ResumeLayout(false);
+            this.panelTitulo.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblSubtitulo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -395,6 +420,9 @@
         private System.Windows.Forms.Label labCargar;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Button btmModificar;
+        private System.Windows.Forms.Panel panelTitulo;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label5;
     }
 }
 
