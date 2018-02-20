@@ -41,6 +41,7 @@
             this.btmFinalizarModifcacion = new System.Windows.Forms.Button();
             this.btmAgregarInicio = new System.Windows.Forms.Button();
             this.pnlPanelCargar = new System.Windows.Forms.Panel();
+            this.btmModificar = new System.Windows.Forms.Button();
             this.btmBusqueda = new System.Windows.Forms.Button();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.btmCargarInicio = new System.Windows.Forms.Button();
@@ -53,7 +54,6 @@
             this.labAgregar = new System.Windows.Forms.Label();
             this.labCargar = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.btmModificar = new System.Windows.Forms.Button();
             this.pnlPanelCargar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -197,6 +197,16 @@
             this.pnlPanelCargar.TabIndex = 15;
             this.pnlPanelCargar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPanelCargar_Paint);
             // 
+            // btmModificar
+            // 
+            this.btmModificar.Location = new System.Drawing.Point(3, 122);
+            this.btmModificar.Name = "btmModificar";
+            this.btmModificar.Size = new System.Drawing.Size(204, 38);
+            this.btmModificar.TabIndex = 7;
+            this.btmModificar.Text = "Modificar";
+            this.btmModificar.UseVisualStyleBackColor = true;
+            this.btmModificar.Click += new System.EventHandler(this.btmModificar_Click);
+            // 
             // btmBusqueda
             // 
             this.btmBusqueda.Location = new System.Drawing.Point(176, 191);
@@ -229,6 +239,7 @@
             // 
             // btmSiguiente
             // 
+            this.btmSiguiente.Enabled = false;
             this.btmSiguiente.Location = new System.Drawing.Point(103, 165);
             this.btmSiguiente.Margin = new System.Windows.Forms.Padding(2);
             this.btmSiguiente.Name = "btmSiguiente";
@@ -240,6 +251,7 @@
             // 
             // btmAnterior
             // 
+            this.btmAnterior.Enabled = false;
             this.btmAnterior.Location = new System.Drawing.Point(2, 165);
             this.btmAnterior.Margin = new System.Windows.Forms.Padding(2);
             this.btmAnterior.Name = "btmAnterior";
@@ -285,6 +297,7 @@
             // RITtextos
             // 
             this.RITtextos.Enabled = false;
+            this.RITtextos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RITtextos.Location = new System.Drawing.Point(0, 0);
             this.RITtextos.Margin = new System.Windows.Forms.Padding(2);
             this.RITtextos.Name = "RITtextos";
@@ -318,16 +331,6 @@
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(181, 20);
             this.dtpFecha.TabIndex = 18;
-            // 
-            // btmModificar
-            // 
-            this.btmModificar.Location = new System.Drawing.Point(3, 122);
-            this.btmModificar.Name = "btmModificar";
-            this.btmModificar.Size = new System.Drawing.Size(204, 38);
-            this.btmModificar.TabIndex = 7;
-            this.btmModificar.Text = "Modificar";
-            this.btmModificar.UseVisualStyleBackColor = true;
-            this.btmModificar.Click += new System.EventHandler(this.btmModificar_Click);
             // 
             // GUIPrincipal
             // 

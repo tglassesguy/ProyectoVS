@@ -40,13 +40,14 @@ namespace ProyectoMatematicasDiscretas
 
         private void btmCargarInicio_Click(object sender, EventArgs e)
         {
-                pintarEnPantalla(codigo.cargarRegistro(0));
-                MessageBox.Show("Se ha cargado el primer registro.");
+            String mensaje = darFormato(0);
+            pintarEnPantalla(mensaje);
+            MessageBox.Show("Se ha cargado el primer registro.");
         }
 
         public void pintarEnPantalla(String mensaje)
         {
-            RITtextos.Text = "";
+            RITtextos.Clear();
             RITtextos.Text = mensaje;
         }
 
@@ -74,8 +75,9 @@ namespace ProyectoMatematicasDiscretas
 
         private void btmCargarFinal_Click(object sender, EventArgs e)
         {
-            pintarEnPantalla(codigo.cargarRegistro(codigo.darNumRegistros()));
-            MessageBox.Show("Se ha cargado el ultimo registros");
+            String mensaje = darFormato(codigo.darNumRegistros());
+            pintarEnPantalla(mensaje);
+            MessageBox.Show("Se ha cargado el ultimo registro.");
         }
 
         private void pnlPanelCargar_Paint(object sender, PaintEventArgs e)
@@ -104,16 +106,17 @@ namespace ProyectoMatematicasDiscretas
 
         public void limpiar()
         {
-            txtNombre.Text = "";
-            txtCantidad.Text = "";
-            txtPrecio.Text = "";
+            txtNombre.Clear();
+            txtCantidad.Clear();
+            txtPrecio.Clear();
         }
 
         private void btmAgregarAUnPunto_Click(object sender, EventArgs e)
         {
             int pos = int.Parse(txtBusqueda.Text);
             codigo.Modificar(txtNombre.Text, dtpFecha.Value, txtCantidad.Text, txtPrecio.Text, pos);
-            pintarEnPantalla(codigo.cargarRegistro(Int32.Parse(txtBusqueda.Text)));
+            String mensaje = darFormato(pos);
+            pintarEnPantalla(mensaje);
             btmFinalizarModifcacion.Enabled = false;
             btmCargarInicio.Enabled = true;
             btmCargarFinal.Enabled = true;
@@ -162,10 +165,18 @@ namespace ProyectoMatematicasDiscretas
             }
             else
             {
-                pintarEnPantalla(codigo.cargarRegistro(Int32.Parse(txtBusqueda.Text)));
+                String mensaje = darFormato(Int32.Parse(txtBusqueda.Text));
+                pintarEnPantalla(mensaje);
+                //pintarEnPantalla(codigo.cargarRegistro(Int32.Parse(txtBusqueda.Text)));
             }
         }
 
+        public String darFormato(int pos)
+        {
+            String[] partes = codigo.subirInformacion(pos);
+            String mensaje = "Nombre: " + partes[0] + "\n" + "Fecha: " + partes[1] + "\n" + "Cantidad: " + partes[2] + " paquetes." + "\n" + "Precio:$" + partes[3];
+            return mensaje;
+        }
         private void lblTitulo_Click(object sender, EventArgs e)
         {
 
