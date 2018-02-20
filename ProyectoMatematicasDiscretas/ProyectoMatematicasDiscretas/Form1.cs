@@ -97,8 +97,16 @@ namespace ProyectoMatematicasDiscretas
         {
             codigo.agregarAlInicio(txtNombre.Text,dtpFecha.Value,txtCantidad.Text,txtPrecio.Text);
             actualizarRegistros();
+            limpiar();
             
             MessageBox.Show("Se ha guardado el registro en el inicio del archivo");
+        }
+
+        public void limpiar()
+        {
+            txtNombre.Text = "";
+            txtCantidad.Text = "";
+            txtPrecio.Text = "";
         }
 
         private void btmAgregarAUnPunto_Click(object sender, EventArgs e)
@@ -106,6 +114,13 @@ namespace ProyectoMatematicasDiscretas
             int pos = int.Parse(txtBusqueda.Text);
             codigo.Modificar(txtNombre.Text, dtpFecha.Value, txtCantidad.Text, txtPrecio.Text, pos);
             pintarEnPantalla(codigo.cargarRegistro(Int32.Parse(txtBusqueda.Text)));
+            btmFinalizarModifcacion.Enabled = false;
+            btmCargarInicio.Enabled = true;
+            btmCargarFinal.Enabled = true;
+            btmAgregarInicio.Enabled = true;
+            btmAgregarFinal.Enabled = true;
+            txtBusqueda.Enabled = true;
+            limpiar();
             MessageBox.Show("Se ha modificado el registro exitosamente.");
         }
 
@@ -128,6 +143,7 @@ namespace ProyectoMatematicasDiscretas
         {
             codigo.agregarAlFinal(txtNombre.Text, dtpFecha.Value, txtCantidad.Text, txtPrecio.Text);
             actualizarRegistros();
+            limpiar();
 
             MessageBox.Show("Se ha guardado el registro al final del archivo.");
         }
@@ -157,6 +173,7 @@ namespace ProyectoMatematicasDiscretas
 
         private void btmModificar_Click(object sender, EventArgs e)
         {
+            txtBusqueda.Enabled = false;
             int pos = int.Parse(txtBusqueda.Text);
             String[] datos = codigo.subirInformacion(pos);
             txtNombre.Text = datos[0];
