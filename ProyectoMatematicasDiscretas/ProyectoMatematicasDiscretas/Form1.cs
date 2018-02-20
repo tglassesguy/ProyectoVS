@@ -40,6 +40,7 @@ namespace ProyectoMatematicasDiscretas
 
         private void btmCargarInicio_Click(object sender, EventArgs e)
         {
+            txtBusqueda.Text = "1";
             String mensaje = darFormato(0);
             pintarEnPantalla(mensaje);
             MessageBox.Show("Se ha cargado el primer registro.");
@@ -75,6 +76,7 @@ namespace ProyectoMatematicasDiscretas
 
         private void btmCargarFinal_Click(object sender, EventArgs e)
         {
+            txtBusqueda.Text = codigo.darNumRegistros().ToString();
             String mensaje = darFormato(codigo.darNumRegistros());
             pintarEnPantalla(mensaje);
             MessageBox.Show("Se ha cargado el ultimo registro.");
@@ -184,8 +186,9 @@ namespace ProyectoMatematicasDiscretas
 
         private void btmModificar_Click(object sender, EventArgs e)
         {
-            txtBusqueda.Enabled = false;
+            
             int pos = int.Parse(txtBusqueda.Text);
+            txtBusqueda.Enabled = false;
             String[] datos = codigo.subirInformacion(pos);
             txtNombre.Text = datos[0];
             dtpFecha.Value = Convert.ToDateTime(datos[1]);
