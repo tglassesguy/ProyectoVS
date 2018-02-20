@@ -13,11 +13,11 @@ using System.IO;
 
 namespace ProyectoMatematicasDiscretas
 {
-    public partial class GUIPrincipal : Form
+    public partial class GUIArchivoDulce : Form
     {
         mundo codigo;
 
-        public GUIPrincipal()
+        public GUIArchivoDulce()
         {
             InitializeComponent();
             codigo = new mundo();
@@ -99,6 +99,8 @@ namespace ProyectoMatematicasDiscretas
 
         private void btmAgregarInicio_Click(object sender, EventArgs e)
         {
+            //Crea el objeto dulce.
+
             codigo.agregarAlInicio(txtNombre.Text,dtpFecha.Value,txtCantidad.Text,txtPrecio.Text);
             actualizarRegistros();
             limpiar();
@@ -205,6 +207,31 @@ namespace ProyectoMatematicasDiscretas
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label5_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTotal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labArchivo_Click(object sender, EventArgs e)
         {
 
         }

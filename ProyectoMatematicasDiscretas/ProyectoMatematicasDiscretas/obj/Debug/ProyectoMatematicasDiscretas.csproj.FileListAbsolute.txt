@@ -7,4 +7,4 @@ C:\Users\javic\Documents\ProyectoVS\ProyectoMatematicasDiscretas\ProyectoMatemat
 C:\Users\javic\Documents\ProyectoVS\ProyectoMatematicasDiscretas\ProyectoMatematicasDiscretas\bin\Debug\ProyectoMatematicasDiscretas.pdb
 C:\Users\javic\Documents\ProyectoVS\ProyectoMatematicasDiscretas\ProyectoMatematicasDiscretas\obj\Debug\ProyectoMatematicasDiscretas.exe
 C:\Users\javic\Documents\ProyectoVS\ProyectoMatematicasDiscretas\ProyectoMatematicasDiscretas\obj\Debug\ProyectoMatematicasDiscretas.pdb
-C:\Users\javic\Documents\ProyectoVS\ProyectoMatematicasDiscretas\ProyectoMatematicasDiscretas\obj\Debug\ProyectoMatematicasDiscretas.GUIPrincipal.resources
+C:\Users\javic\Documents\ProyectoVS\ProyectoMatematicasDiscretas\ProyectoMatematicasDiscretas\obj\Debug\ProyectoMatematicasDiscretas.GUIArchivoDulce.resources

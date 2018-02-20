@@ -1,6 +1,6 @@
 ﻿namespace ProyectoMatematicasDiscretas
 {
-    partial class GUIPrincipal
+    partial class GUIArchivoDulce
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -56,6 +56,9 @@
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
+            this.labArchivo = new System.Windows.Forms.Label();
+            this.txtRutaArchivo = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlPanelCargar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelTitulo.SuspendLayout();
@@ -177,22 +180,23 @@
             this.pnlPanelCargar.BackColor = System.Drawing.Color.White;
             this.pnlPanelCargar.Controls.Add(this.btmModificar);
             this.pnlPanelCargar.Controls.Add(this.btmBusqueda);
+            this.pnlPanelCargar.Controls.Add(this.panel1);
             this.pnlPanelCargar.Controls.Add(this.labCargar);
             this.pnlPanelCargar.Controls.Add(this.txtBusqueda);
             this.pnlPanelCargar.Controls.Add(this.btmCargarInicio);
             this.pnlPanelCargar.Controls.Add(this.btmSiguiente);
             this.pnlPanelCargar.Controls.Add(this.btmAnterior);
             this.pnlPanelCargar.Controls.Add(this.btmCargarFinal);
-            this.pnlPanelCargar.Location = new System.Drawing.Point(10, 258);
+            this.pnlPanelCargar.Location = new System.Drawing.Point(8, 332);
             this.pnlPanelCargar.Margin = new System.Windows.Forms.Padding(2);
             this.pnlPanelCargar.Name = "pnlPanelCargar";
-            this.pnlPanelCargar.Size = new System.Drawing.Size(607, 242);
+            this.pnlPanelCargar.Size = new System.Drawing.Size(607, 249);
             this.pnlPanelCargar.TabIndex = 15;
             this.pnlPanelCargar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPanelCargar_Paint);
             // 
             // btmModificar
             // 
-            this.btmModificar.Location = new System.Drawing.Point(3, 137);
+            this.btmModificar.Location = new System.Drawing.Point(3, 144);
             this.btmModificar.Name = "btmModificar";
             this.btmModificar.Size = new System.Drawing.Size(204, 38);
             this.btmModificar.TabIndex = 7;
@@ -202,7 +206,7 @@
             // 
             // btmBusqueda
             // 
-            this.btmBusqueda.Location = new System.Drawing.Point(176, 206);
+            this.btmBusqueda.Location = new System.Drawing.Point(176, 218);
             this.btmBusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.btmBusqueda.Name = "btmBusqueda";
             this.btmBusqueda.Size = new System.Drawing.Size(31, 22);
@@ -213,7 +217,7 @@
             // 
             // txtBusqueda
             // 
-            this.txtBusqueda.Location = new System.Drawing.Point(2, 207);
+            this.txtBusqueda.Location = new System.Drawing.Point(2, 219);
             this.txtBusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(203, 20);
@@ -233,7 +237,7 @@
             // btmSiguiente
             // 
             this.btmSiguiente.Enabled = false;
-            this.btmSiguiente.Location = new System.Drawing.Point(103, 180);
+            this.btmSiguiente.Location = new System.Drawing.Point(103, 192);
             this.btmSiguiente.Margin = new System.Windows.Forms.Padding(2);
             this.btmSiguiente.Name = "btmSiguiente";
             this.btmSiguiente.Size = new System.Drawing.Size(105, 26);
@@ -245,7 +249,7 @@
             // btmAnterior
             // 
             this.btmAnterior.Enabled = false;
-            this.btmAnterior.Location = new System.Drawing.Point(2, 180);
+            this.btmAnterior.Location = new System.Drawing.Point(2, 192);
             this.btmAnterior.Margin = new System.Windows.Forms.Padding(2);
             this.btmAnterior.Name = "btmAnterior";
             this.btmAnterior.Size = new System.Drawing.Size(105, 26);
@@ -270,31 +274,32 @@
             this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.Controls.Add(this.lblTotal);
             this.panel1.Controls.Add(this.RITtextos);
-            this.panel1.Location = new System.Drawing.Point(221, 273);
+            this.panel1.Location = new System.Drawing.Point(212, 4);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(389, 216);
+            this.panel1.Size = new System.Drawing.Size(389, 238);
             this.panel1.TabIndex = 7;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(10, 199);
+            this.lblTotal.Location = new System.Drawing.Point(7, 215);
             this.lblTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(16, 13);
             this.lblTotal.TabIndex = 1;
             this.lblTotal.Text = "---";
+            this.lblTotal.Click += new System.EventHandler(this.lblTotal_Click);
             // 
             // RITtextos
             // 
             this.RITtextos.Enabled = false;
             this.RITtextos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RITtextos.Location = new System.Drawing.Point(2, 2);
+            this.RITtextos.Location = new System.Drawing.Point(1, 2);
             this.RITtextos.Margin = new System.Windows.Forms.Padding(2);
             this.RITtextos.Name = "RITtextos";
-            this.RITtextos.Size = new System.Drawing.Size(387, 197);
+            this.RITtextos.Size = new System.Drawing.Size(387, 211);
             this.RITtextos.TabIndex = 0;
             this.RITtextos.Text = "";
             this.RITtextos.TextChanged += new System.EventHandler(this.RITtextos_TextChanged);
@@ -351,7 +356,7 @@
             this.panel2.Controls.Add(this.txtPrecio);
             this.panel2.Controls.Add(this.btmFinalizarModifcacion);
             this.panel2.Controls.Add(this.btmAgregarFinal);
-            this.panel2.Location = new System.Drawing.Point(10, 108);
+            this.panel2.Location = new System.Drawing.Point(8, 172);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(607, 147);
             this.panel2.TabIndex = 20;
@@ -362,24 +367,55 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Script MT Bold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(163, 20);
+            this.label5.Location = new System.Drawing.Point(158, 20);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(315, 58);
             this.label5.TabIndex = 0;
             this.label5.Text = "Dulceria Miau";
+            this.label5.Click += new System.EventHandler(this.label5_Click_1);
             // 
-            // GUIPrincipal
+            // labArchivo
+            // 
+            this.labArchivo.AutoSize = true;
+            this.labArchivo.Location = new System.Drawing.Point(16, 115);
+            this.labArchivo.Name = "labArchivo";
+            this.labArchivo.Size = new System.Drawing.Size(43, 13);
+            this.labArchivo.TabIndex = 21;
+            this.labArchivo.Text = "Archivo";
+            this.labArchivo.Click += new System.EventHandler(this.labArchivo_Click);
+            // 
+            // txtRutaArchivo
+            // 
+            this.txtRutaArchivo.Location = new System.Drawing.Point(22, 133);
+            this.txtRutaArchivo.Name = "txtRutaArchivo";
+            this.txtRutaArchivo.Size = new System.Drawing.Size(514, 20);
+            this.txtRutaArchivo.TabIndex = 22;
+            this.txtRutaArchivo.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(536, 132);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(56, 21);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "•••";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // GUIArchivoDulce
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(631, 511);
+            this.ClientSize = new System.Drawing.Size(625, 599);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtRutaArchivo);
+            this.Controls.Add(this.labArchivo);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelTitulo);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlPanelCargar);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "GUIPrincipal";
+            this.Name = "GUIArchivoDulce";
             this.Text = "Heladería Miau";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pnlPanelCargar.ResumeLayout(false);
@@ -391,6 +427,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -423,6 +460,9 @@
         private System.Windows.Forms.Panel panelTitulo;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labArchivo;
+        private System.Windows.Forms.TextBox txtRutaArchivo;
+        private System.Windows.Forms.Button button1;
     }
 }
 

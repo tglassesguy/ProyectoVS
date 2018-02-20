@@ -16,7 +16,7 @@ namespace ProyectoMatematicasDiscretas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GUIPrincipal());
+            Application.Run(new GUIArchivoDulce());
         }
     }
 }
