@@ -10,30 +10,41 @@ namespace ProyectoMatematicasDiscretas
 {
     class mundo
     {
+    
         public static int MAX_NOMBRE = 10;  
         public static int MAX_CANTIDAD = 10;
         public static int MAX_PRECIO = 10;
         public static int MAX_FECHA = 10;
-        public static String RUTA = "D:/DATA.txt";
+       
         public static int TAM_DATA = MAX_NOMBRE + MAX_CANTIDAD + MAX_PRECIO + MAX_FECHA;
+
+        private String ruta;
 
         FileStream archivo;
         private int numRegistros = 0;
 
+
+
         public String darRuta()
         {
-            return RUTA;
+            return ruta;
+        }
+        public void setRuta(String pRuta)
+        {
+            ruta = pRuta;
         }
 
         public int darNumRegistros()
         {
-            FileInfo temp = new FileInfo(RUTA);
+            FileInfo temp = new FileInfo(darRuta());
             numRegistros = (int)temp.Length / TAM_DATA;
             return numRegistros;
         }
 
-        public String[] subirInformacion(int pos)
+        public Dulce subirInformacion(int pos)
         {
+           
+
             String[] array = new String[4];
             String data = cargarRegistro(pos);
             String temp1, temp2, temp3, temp4;
@@ -45,8 +56,10 @@ namespace ProyectoMatematicasDiscretas
             array[2] = temp3.Trim(' ');
             temp4 = data.Substring(MAX_NOMBRE + MAX_FECHA + MAX_CANTIDAD, MAX_PRECIO);
             array[3] = temp4.Trim(' ');
-           
-            return array;
+
+            Dulce D = new Dulce(temp1,Convert.ToDateTime(temp2),Convert.ToInt32(temp3),Convert.ToDouble(temp4), true);
+
+            return D;
             
         }
         public void Modificar(String nombre, DateTime fecha, String cantidad, String precio , int pos)
@@ -58,7 +71,7 @@ namespace ProyectoMatematicasDiscretas
             data += ajustarData(cantidad, MAX_CANTIDAD);
             data += ajustarData(precio, MAX_PRECIO);
 
-            archivo = new FileStream(RUTA, FileMode.Open);
+            archivo = new FileStream(darRuta(), FileMode.Open);
 
             archivo.Seek(TAM_DATA * (pos - 1), SeekOrigin.Begin);
             archivo.Write(Encoding.ASCII.GetBytes(data), 0, data.Length);
@@ -80,50 +93,29 @@ namespace ProyectoMatematicasDiscretas
 
             return mensaje;
         }
-        public void agregarAlInicio(String nombre, DateTime fecha, String cantidad, String precio)
-        {
-            String data ="";
 
-            data += ajustarData(nombre, MAX_NOMBRE);
-            data += ajustarData(fecha.ToString(), MAX_FECHA);
-            data += ajustarData(cantidad, MAX_CANTIDAD);
-            data += ajustarData(precio, MAX_PRECIO);
-
-            archivo = new FileStream(RUTA, FileMode.Open);
-
-            archivo.Seek(0, SeekOrigin.Begin);
-            archivo.Write(Encoding.ASCII.GetBytes(data), 0, data.Length);
-            archivo.Close();
-        }
-
-        public void agregarAlFinal(String nombre, DateTime fecha, String cantidad, String precio)
+        public void guardar (Dulce pDulce, int pPos)
         {
             String data = "";
 
-            data += ajustarData(nombre, MAX_NOMBRE);
-            data += ajustarData(fecha.ToString(), MAX_FECHA);
-            data += ajustarData(cantidad, MAX_CANTIDAD);
-            data += ajustarData(precio, MAX_PRECIO);
+            data += ajustarData(pDulce.getNombre(), MAX_NOMBRE);
+            data += ajustarData(pDulce.getFecha().ToString(), MAX_FECHA);
+            data += ajustarData(Convert.ToString(pDulce.getCantidad()) , MAX_CANTIDAD);
+            data += ajustarData(Convert.ToString(pDulce.getPrecio()), MAX_PRECIO);
 
-            archivo = new FileStream(RUTA, FileMode.Open);
+            archivo = new FileStream(darRuta(), FileMode.Open);
 
-            archivo.Seek(0, SeekOrigin.End);
+            archivo.Seek(TAM_DATA * (pPos - 1), SeekOrigin.Begin);
             archivo.Write(Encoding.ASCII.GetBytes(data), 0, data.Length);
             archivo.Close();
+
         }
 
         public String cargarRegistro(int pos)
         {
             byte[] info = new byte[TAM_DATA];
-            archivo = new FileStream(RUTA, FileMode.Open);
-            if( pos == 0)
-            {
-                archivo.Seek(0, SeekOrigin.Begin);
-            }
-            else
-            {
-                archivo.Seek(TAM_DATA * (pos - 1), SeekOrigin.Begin);
-            }
+            archivo = new FileStream(darRuta(), FileMode.Open);
+            archivo.Seek(TAM_DATA * (pos - 1), SeekOrigin.Begin);
             archivo.Read(info, 0, TAM_DATA);
             archivo.Close();
 
@@ -131,10 +123,15 @@ namespace ProyectoMatematicasDiscretas
             
         }
 
-        
+     /*   public String DarRuta()
+        {
+            
+
+
+        }
+        */
     }
-
-
+    
 
     
    

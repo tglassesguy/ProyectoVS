@@ -8,7 +8,10 @@ namespace ProyectoMatematicasDiscretas
 {
     class Dulce
     {
-        public static int MAX_NOMBRE, MAX_CANTIDAD, MAX_PRECIO, MAX_FECHA = 10;
+        public static int MAX_NOMBRE = 10;
+        public static int MAX_CANTIDAD = 10;
+        public static int MAX_PRECIO = 10;
+        public static int MAX_FECHA = 10;
         public static int TAM_DULCE = MAX_NOMBRE + MAX_CANTIDAD + MAX_PRECIO + MAX_FECHA;
 
         private String nombre;

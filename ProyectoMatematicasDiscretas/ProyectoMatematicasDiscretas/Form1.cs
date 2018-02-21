@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using System.IO;
+
 
 
 namespace ProyectoMatematicasDiscretas
@@ -21,16 +21,7 @@ namespace ProyectoMatematicasDiscretas
         {
             InitializeComponent();
             codigo = new mundo();
-
-            if(!File.Exists(codigo.darRuta()))
-            {
-                File.Create(codigo.darRuta());
-            }
-            else
-            {
-                codigo.darNumRegistros();
-            }
-
+ 
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -54,19 +45,20 @@ namespace ProyectoMatematicasDiscretas
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            if(codigo.darNumRegistros() == 0)
+           /* 
+            */
+        }
+
+        public void actualizarRegistros()
+        {
+            if (codigo.darNumRegistros() == 0)
             {
                 lblTotal.Text = "No se encuentran registros en la base de datos.";
             }
             else
             {
-                actualizarRegistros();
+                lblTotal.Text = "Número de registros: " + codigo.darNumRegistros() + ".";
             }
-        }
-
-        public void actualizarRegistros()
-        {
-            lblTotal.Text = "Número de registros: " + codigo.darNumRegistros() + ".";
         }
 
         private void btmAnterior_Click(object sender, EventArgs e)
@@ -100,8 +92,12 @@ namespace ProyectoMatematicasDiscretas
         private void btmAgregarInicio_Click(object sender, EventArgs e)
         {
             //Crea el objeto dulce.
+            double temp1 = Convert.ToDouble(txtPrecio.Text);
+            int temp2 = Convert.ToInt32(txtCantidad.Text);
 
-            codigo.agregarAlInicio(txtNombre.Text,dtpFecha.Value,txtCantidad.Text,txtPrecio.Text);
+            Dulce t = new Dulce(txtNombre.Text, dtpFecha.Value, temp2 , temp1 ,true);
+
+            codigo.guardar(t, 1);
             actualizarRegistros();
             limpiar();
             
@@ -148,9 +144,15 @@ namespace ProyectoMatematicasDiscretas
 
         private void btmAgregarFinal_Click(object sender, EventArgs e)
         {
-            codigo.agregarAlFinal(txtNombre.Text, dtpFecha.Value, txtCantidad.Text, txtPrecio.Text);
+            double temp1 = Convert.ToDouble(txtPrecio.Text);
+            int temp2 = Convert.ToInt32(txtCantidad.Text);
+
+            Dulce t = new Dulce(txtNombre.Text, dtpFecha.Value, temp2, temp1, true);
+
+            codigo.guardar(t, codigo.darNumRegistros()+1);
             actualizarRegistros();
             limpiar();
+            
 
             MessageBox.Show("Se ha guardado el registro al final del archivo.");
         }
@@ -177,9 +179,11 @@ namespace ProyectoMatematicasDiscretas
 
         public String darFormato(int pos)
         {
-            String[] partes = codigo.subirInformacion(pos);
-            String mensaje = "Nombre: " + partes[0] + "\n" + "Fecha: " + partes[1] + "\n" + "Cantidad: " + partes[2] + " paquetes." + "\n" + "Precio:$" + partes[3];
-            return mensaje;
+            /*   String[] partes = codigo.subirInformacion(pos);
+               String mensaje = "Nombre: " + partes[0] + "\n" + "Fecha: " + partes[1] + "\n" + "Cantidad: " + partes[2] + " paquetes." + "\n" + "Precio:$" + partes[3];
+               return mensaje;
+               */
+            return "ñaña";
         }
         private void lblTitulo_Click(object sender, EventArgs e)
         {
@@ -191,11 +195,12 @@ namespace ProyectoMatematicasDiscretas
             
             int pos = int.Parse(txtBusqueda.Text);
             txtBusqueda.Enabled = false;
-            String[] datos = codigo.subirInformacion(pos);
-            txtNombre.Text = datos[0];
-            dtpFecha.Value = Convert.ToDateTime(datos[1]);
-            txtCantidad.Text = datos[2];
-            txtPrecio.Text = datos[3];
+            Dulce datos = codigo.subirInformacion(pos);
+
+            txtNombre.Text = datos.getNombre();
+            dtpFecha.Value = datos.getFecha();
+            txtCantidad.Text = datos.getCantidad().ToString();
+            txtPrecio.Text = datos.getPrecio().ToString();
 
             MessageBox.Show("Se ha cargado el registro: " + pos + " para su modificación.");
 
@@ -228,12 +233,31 @@ namespace ProyectoMatematicasDiscretas
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                txtRutaArchivo.Text = openFileDialog1.FileName;
+                codigo.setRuta(openFileDialog1.FileName);
+                actualizarRegistros();
+            }
 
         }
 
         private void labArchivo_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btmEliminar_Click(object sender, EventArgs e)
+        {
+            int pos = int.Parse(txtBusqueda.Text);
+
+            codigo.Modificar(txtNombre.Text, dtpFecha.Value, txtCantidad.Text, txtPrecio.Text, pos);
+            
+            String mensaje = darFormato(pos).ToString();
+            mensaje.Remove(0, mundo.TAM_DATA);
+            pintarEnPantalla(mensaje);
+            actualizarRegistros();
+            MessageBox.Show("Se ha eliminado el registro" + " " + pos + " " + "de la base de datos");
         }
     }
 }
