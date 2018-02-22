@@ -118,18 +118,17 @@ namespace ProyectoMatematicasDiscretas
             
         }
 
-     /*   public String DarRuta()
+        public void volcar(String pRuta)
         {
+            archivo = new FileStream( pRuta, FileMode.Open);
+            linea = archivo.Read
             
+            while()
+            {
 
-
+            }
         }
-        */
     }
-    
-
-    
-   
 }
 
 

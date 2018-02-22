@@ -135,6 +135,7 @@ namespace ProyectoMatematicasDiscretas
             btmCargarFinal.Enabled = true;
             btmAgregarInicio.Enabled = true;
             btmAgregarFinal.Enabled = true;
+            btmModificar.Enabled = true;
             txtBusqueda.Enabled = true;
      
             MessageBox.Show("Se ha modificado el registro exitosamente.");
@@ -157,6 +158,7 @@ namespace ProyectoMatematicasDiscretas
 
         private void btmAgregarFinal_Click(object sender, EventArgs e)
         {
+            //TODO try-catch
             double temp1 = Convert.ToDouble(txtPrecio.Text);
             int temp2 = Convert.ToInt32(txtCantidad.Text);
 
@@ -177,7 +179,7 @@ namespace ProyectoMatematicasDiscretas
 
         private void btmBusqueda_Click(object sender, EventArgs e)
         {
-            
+            //TODO  HACER TRY-CATCH AQUI
             if(txtBusqueda.Text == "" | txtBusqueda.Text == null)
             {
                 MessageBox.Show("Por favor, indicar la posición del registro. Recuerde que hay " + 5 /* cambiar esto*/ + " registros en la base de datos.");
@@ -206,7 +208,10 @@ namespace ProyectoMatematicasDiscretas
 
             int pos = int.Parse(txtBusqueda.Text);
             txtBusqueda.Enabled = false;
+            btmModificar.Enabled = false;
+
             Dulce datos = codigo.subirInformacion(pos);
+            pintarEnPantalla(datos);
 
             txtNombre.Text = datos.getNombre();
             dtpFecha.Value = datos.getFecha();
@@ -250,6 +255,8 @@ namespace ProyectoMatematicasDiscretas
                 txtRutaArchivo.Text = openFileDialog1.FileName;
                 codigo.setRuta(openFileDialog1.FileName);
                 actualizarRegistros();
+                pnlRegistro.Enabled = true;
+                pnlCargar.Enabled = true;
             }
 
         }
@@ -272,6 +279,16 @@ namespace ProyectoMatematicasDiscretas
             actualizarRegistros();
             MessageBox.Show("Se ha eliminado el registro" + " " + pos + " " + "de la base de datos");
             */
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                codigo.volcar(openFileDialog1.FileName);
+                actualizarRegistros();
+                MessageBox.Show("Se ha cargado los registros del archivo: " + openFileDialog1.FileName);
+            }
         }
     }
 }

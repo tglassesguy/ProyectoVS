@@ -40,7 +40,7 @@
             this.btmAgregarFinal = new System.Windows.Forms.Button();
             this.btmFinalizarModifcacion = new System.Windows.Forms.Button();
             this.btmAgregarInicio = new System.Windows.Forms.Button();
-            this.pnlPanelCargar = new System.Windows.Forms.Panel();
+            this.pnlCargar = new System.Windows.Forms.Panel();
             this.btmEliminar = new System.Windows.Forms.Button();
             this.btmModificar = new System.Windows.Forms.Button();
             this.btmBusqueda = new System.Windows.Forms.Button();
@@ -56,14 +56,15 @@
             this.labAgregar = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.panelTitulo = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlRegistro = new System.Windows.Forms.Panel();
             this.labArchivo = new System.Windows.Forms.Label();
             this.txtRutaArchivo = new System.Windows.Forms.TextBox();
             this.btmRuta = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.pnlPanelCargar.SuspendLayout();
+            this.btmVolcar = new System.Windows.Forms.Button();
+            this.pnlCargar.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnlRegistro.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblSubtitulo
@@ -179,25 +180,27 @@
             this.btmAgregarInicio.UseVisualStyleBackColor = false;
             this.btmAgregarInicio.Click += new System.EventHandler(this.btmAgregarInicio_Click);
             // 
-            // pnlPanelCargar
+            // pnlCargar
             // 
-            this.pnlPanelCargar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(243)))), ((int)(((byte)(249)))));
-            this.pnlPanelCargar.Controls.Add(this.btmEliminar);
-            this.pnlPanelCargar.Controls.Add(this.btmModificar);
-            this.pnlPanelCargar.Controls.Add(this.btmBusqueda);
-            this.pnlPanelCargar.Controls.Add(this.panel1);
-            this.pnlPanelCargar.Controls.Add(this.labCargar);
-            this.pnlPanelCargar.Controls.Add(this.txtBusqueda);
-            this.pnlPanelCargar.Controls.Add(this.btmCargarInicio);
-            this.pnlPanelCargar.Controls.Add(this.btmSiguiente);
-            this.pnlPanelCargar.Controls.Add(this.btmAnterior);
-            this.pnlPanelCargar.Controls.Add(this.btmCargarFinal);
-            this.pnlPanelCargar.Location = new System.Drawing.Point(-8, 332);
-            this.pnlPanelCargar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pnlPanelCargar.Name = "pnlPanelCargar";
-            this.pnlPanelCargar.Size = new System.Drawing.Size(642, 322);
-            this.pnlPanelCargar.TabIndex = 15;
-            this.pnlPanelCargar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPanelCargar_Paint);
+            this.pnlCargar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(243)))), ((int)(((byte)(249)))));
+            this.pnlCargar.Controls.Add(this.btmVolcar);
+            this.pnlCargar.Controls.Add(this.btmEliminar);
+            this.pnlCargar.Controls.Add(this.btmModificar);
+            this.pnlCargar.Controls.Add(this.btmBusqueda);
+            this.pnlCargar.Controls.Add(this.panel1);
+            this.pnlCargar.Controls.Add(this.labCargar);
+            this.pnlCargar.Controls.Add(this.txtBusqueda);
+            this.pnlCargar.Controls.Add(this.btmCargarInicio);
+            this.pnlCargar.Controls.Add(this.btmSiguiente);
+            this.pnlCargar.Controls.Add(this.btmAnterior);
+            this.pnlCargar.Controls.Add(this.btmCargarFinal);
+            this.pnlCargar.Enabled = false;
+            this.pnlCargar.Location = new System.Drawing.Point(-8, 332);
+            this.pnlCargar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCargar.Name = "pnlCargar";
+            this.pnlCargar.Size = new System.Drawing.Size(642, 322);
+            this.pnlCargar.TabIndex = 15;
+            this.pnlCargar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPanelCargar_Paint);
             // 
             // btmEliminar
             // 
@@ -360,27 +363,28 @@
             this.panelTitulo.Size = new System.Drawing.Size(642, 102);
             this.panelTitulo.TabIndex = 19;
             // 
-            // panel2
+            // pnlRegistro
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(237)))));
-            this.panel2.Controls.Add(this.lblSubtitulo);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.dtpFecha);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.labAgregar);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.txtNombre);
-            this.panel2.Controls.Add(this.txtCantidad);
-            this.panel2.Controls.Add(this.btmAgregarInicio);
-            this.panel2.Controls.Add(this.txtPrecio);
-            this.panel2.Controls.Add(this.btmFinalizarModifcacion);
-            this.panel2.Controls.Add(this.btmAgregarFinal);
-            this.panel2.Location = new System.Drawing.Point(-8, 172);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(642, 147);
-            this.panel2.TabIndex = 20;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.pnlRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(237)))));
+            this.pnlRegistro.Controls.Add(this.lblSubtitulo);
+            this.pnlRegistro.Controls.Add(this.label1);
+            this.pnlRegistro.Controls.Add(this.dtpFecha);
+            this.pnlRegistro.Controls.Add(this.label2);
+            this.pnlRegistro.Controls.Add(this.label3);
+            this.pnlRegistro.Controls.Add(this.labAgregar);
+            this.pnlRegistro.Controls.Add(this.label4);
+            this.pnlRegistro.Controls.Add(this.txtNombre);
+            this.pnlRegistro.Controls.Add(this.txtCantidad);
+            this.pnlRegistro.Controls.Add(this.btmAgregarInicio);
+            this.pnlRegistro.Controls.Add(this.txtPrecio);
+            this.pnlRegistro.Controls.Add(this.btmFinalizarModifcacion);
+            this.pnlRegistro.Controls.Add(this.btmAgregarFinal);
+            this.pnlRegistro.Enabled = false;
+            this.pnlRegistro.Location = new System.Drawing.Point(-8, 172);
+            this.pnlRegistro.Name = "pnlRegistro";
+            this.pnlRegistro.Size = new System.Drawing.Size(642, 147);
+            this.pnlRegistro.TabIndex = 20;
+            this.pnlRegistro.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // labArchivo
             // 
@@ -414,29 +418,40 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // btmVolcar
+            // 
+            this.btmVolcar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btmVolcar.Location = new System.Drawing.Point(564, 281);
+            this.btmVolcar.Name = "btmVolcar";
+            this.btmVolcar.Size = new System.Drawing.Size(57, 23);
+            this.btmVolcar.TabIndex = 19;
+            this.btmVolcar.Text = "«";
+            this.btmVolcar.UseVisualStyleBackColor = true;
+            this.btmVolcar.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // GUIArchivoDulce
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(243)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(625, 616);
+            this.ClientSize = new System.Drawing.Size(625, 648);
             this.Controls.Add(this.btmRuta);
             this.Controls.Add(this.txtRutaArchivo);
             this.Controls.Add(this.labArchivo);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pnlRegistro);
             this.Controls.Add(this.panelTitulo);
-            this.Controls.Add(this.pnlPanelCargar);
+            this.Controls.Add(this.pnlCargar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "GUIArchivoDulce";
             this.Text = "Dulcería Miau";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.pnlPanelCargar.ResumeLayout(false);
-            this.pnlPanelCargar.PerformLayout();
+            this.pnlCargar.ResumeLayout(false);
+            this.pnlCargar.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.pnlRegistro.ResumeLayout(false);
+            this.pnlRegistro.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -454,7 +469,7 @@
         private System.Windows.Forms.Button btmAgregarFinal;
         private System.Windows.Forms.Button btmFinalizarModifcacion;
         private System.Windows.Forms.Button btmAgregarInicio;
-        private System.Windows.Forms.Panel pnlPanelCargar;
+        private System.Windows.Forms.Panel pnlCargar;
         private System.Windows.Forms.Button btmSiguiente;
         private System.Windows.Forms.Button btmAnterior;
         private System.Windows.Forms.Button btmCargarFinal;
@@ -469,12 +484,13 @@
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Button btmModificar;
         private System.Windows.Forms.Panel panelTitulo;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlRegistro;
         private System.Windows.Forms.Label labArchivo;
         private System.Windows.Forms.TextBox txtRutaArchivo;
         private System.Windows.Forms.Button btmRuta;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btmEliminar;
+        private System.Windows.Forms.Button btmVolcar;
     }
 }
 
