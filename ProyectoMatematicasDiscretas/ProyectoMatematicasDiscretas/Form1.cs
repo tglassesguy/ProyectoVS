@@ -16,6 +16,7 @@ namespace ProyectoMatematicasDiscretas
     public partial class GUIArchivoDulce : Form
     {
         mundo codigo;
+        
 
         public GUIArchivoDulce()
         {
@@ -31,22 +32,26 @@ namespace ProyectoMatematicasDiscretas
 
         private void btmCargarInicio_Click(object sender, EventArgs e)
         {
+            Dulce temp = codigo.subirInformacion(1);
+            pintarEnPantalla(temp);
             txtBusqueda.Text = "1";
-            String mensaje = darFormato(0);
-            pintarEnPantalla(mensaje);
             MessageBox.Show("Se ha cargado el primer registro.");
         }
 
-        public void pintarEnPantalla(String mensaje)
+        public void pintarEnPantalla(Dulce pDulce)
         {
+            String mensaje = "Nombre: " + pDulce.getNombre() + "\n" 
+                            + "Fecha: " + pDulce.getFecha().ToString() + "\n" 
+                            + "Cantidad: " + pDulce.getCantidad() + " paquetes." + "\n" 
+                            + "Precio:$" + pDulce.getPrecio();
+
             RITtextos.Clear();
             RITtextos.Text = mensaje;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-           /* 
-            */
+           
         }
 
         public void actualizarRegistros()
@@ -68,9 +73,9 @@ namespace ProyectoMatematicasDiscretas
 
         private void btmCargarFinal_Click(object sender, EventArgs e)
         {
+            Dulce temp = codigo.subirInformacion(codigo.darNumRegistros());
+            pintarEnPantalla(temp);
             txtBusqueda.Text = codigo.darNumRegistros().ToString();
-            String mensaje = darFormato(codigo.darNumRegistros());
-            pintarEnPantalla(mensaje);
             MessageBox.Show("Se ha cargado el ultimo registro.");
         }
 
@@ -114,16 +119,24 @@ namespace ProyectoMatematicasDiscretas
         private void btmAgregarAUnPunto_Click(object sender, EventArgs e)
         {
             int pos = int.Parse(txtBusqueda.Text);
-            codigo.Modificar(txtNombre.Text, dtpFecha.Value, txtCantidad.Text, txtPrecio.Text, pos);
-            String mensaje = darFormato(pos);
-            pintarEnPantalla(mensaje);
+
+            double temp1 = Convert.ToDouble(txtPrecio.Text);
+            int temp2 = Convert.ToInt32(txtCantidad.Text);
+
+            Dulce t = new Dulce(txtNombre.Text, dtpFecha.Value, temp2, temp1, true);
+
+            codigo.guardar(t, pos);
+            pintarEnPantalla(t);
+            actualizarRegistros();
+            limpiar();
+
             btmFinalizarModifcacion.Enabled = false;
             btmCargarInicio.Enabled = true;
             btmCargarFinal.Enabled = true;
             btmAgregarInicio.Enabled = true;
             btmAgregarFinal.Enabled = true;
             txtBusqueda.Enabled = true;
-            limpiar();
+     
             MessageBox.Show("Se ha modificado el registro exitosamente.");
         }
 
@@ -171,9 +184,7 @@ namespace ProyectoMatematicasDiscretas
             }
             else
             {
-                String mensaje = darFormato(Int32.Parse(txtBusqueda.Text));
-                pintarEnPantalla(mensaje);
-                //pintarEnPantalla(codigo.cargarRegistro(Int32.Parse(txtBusqueda.Text)));
+                pintarEnPantalla(codigo.subirInformacion(Int32.Parse(txtBusqueda.Text)));
             }
         }
 
@@ -192,7 +203,7 @@ namespace ProyectoMatematicasDiscretas
 
         private void btmModificar_Click(object sender, EventArgs e)
         {
-            
+
             int pos = int.Parse(txtBusqueda.Text);
             txtBusqueda.Enabled = false;
             Dulce datos = codigo.subirInformacion(pos);
@@ -209,6 +220,7 @@ namespace ProyectoMatematicasDiscretas
             btmCargarFinal.Enabled = false;
             btmAgregarInicio.Enabled = false;
             btmAgregarFinal.Enabled = false;
+            btmEliminar.Enabled = false;
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -249,15 +261,17 @@ namespace ProyectoMatematicasDiscretas
 
         private void btmEliminar_Click(object sender, EventArgs e)
         {
+            /*
             int pos = int.Parse(txtBusqueda.Text);
 
             codigo.Modificar(txtNombre.Text, dtpFecha.Value, txtCantidad.Text, txtPrecio.Text, pos);
             
-            String mensaje = darFormato(pos).ToString();
+            String mensaje = darFormato(pos).ToString(s);
             mensaje.Remove(0, mundo.TAM_DATA);
             pintarEnPantalla(mensaje);
             actualizarRegistros();
             MessageBox.Show("Se ha eliminado el registro" + " " + pos + " " + "de la base de datos");
+            */
         }
     }
 }

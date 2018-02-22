@@ -36,6 +36,8 @@ namespace ProyectoMatematicasDiscretas
 
         public int darNumRegistros()
         {
+            //try catch, hacer.
+
             FileInfo temp = new FileInfo(darRuta());
             numRegistros = (int)temp.Length / TAM_DATA;
             return numRegistros;
@@ -43,19 +45,12 @@ namespace ProyectoMatematicasDiscretas
 
         public Dulce subirInformacion(int pos)
         {
-           
-
-            String[] array = new String[4];
             String data = cargarRegistro(pos);
             String temp1, temp2, temp3, temp4;
-            temp1 = data.Substring(0,MAX_NOMBRE);
-            array[0] = temp1.Trim(' ');
-            temp2 = data.Substring(MAX_NOMBRE, MAX_FECHA);
-            array[1] = temp2.Trim(' ');
-            temp3 = data.Substring(MAX_NOMBRE + MAX_FECHA, MAX_CANTIDAD);
-            array[2] = temp3.Trim(' ');
-            temp4 = data.Substring(MAX_NOMBRE + MAX_FECHA + MAX_CANTIDAD, MAX_PRECIO);
-            array[3] = temp4.Trim(' ');
+            temp1 = data.Substring(0,MAX_NOMBRE).Trim(' '); 
+            temp2 = data.Substring(MAX_NOMBRE, MAX_FECHA).Trim(' ');
+            temp3 = data.Substring(MAX_NOMBRE + MAX_FECHA, MAX_CANTIDAD).Trim(' ');
+            temp4 = data.Substring(MAX_NOMBRE + MAX_FECHA + MAX_CANTIDAD, MAX_PRECIO).Trim(' ');
 
             Dulce D = new Dulce(temp1,Convert.ToDateTime(temp2),Convert.ToInt32(temp3),Convert.ToDouble(temp4), true);
 

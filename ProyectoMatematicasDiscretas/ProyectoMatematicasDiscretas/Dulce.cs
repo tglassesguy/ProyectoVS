@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoMatematicasDiscretas
 {
-    class Dulce
+    public class Dulce
     {
         public static int MAX_NOMBRE = 10;
         public static int MAX_CANTIDAD = 10;
