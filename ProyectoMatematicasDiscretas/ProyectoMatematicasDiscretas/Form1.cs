@@ -287,8 +287,13 @@ namespace ProyectoMatematicasDiscretas
             {
                 codigo.volcar(openFileDialog1.FileName);
                 actualizarRegistros();
-                MessageBox.Show("Se ha cargado los registros del archivo: " + openFileDialog1.FileName);
+                //MessageBox.Show("Se ha cargado los registros del archivo: " + openFileDialog1.FileName);
             }
+        }
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

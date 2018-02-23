@@ -120,14 +120,32 @@ namespace ProyectoMatematicasDiscretas
 
         public void volcar(String pRuta)
         {
-            archivo = new FileStream( pRuta, FileMode.Open);
-            linea = archivo.Read
-            
-            while()
-            {
+            Dulce temp; 
+            StreamReader lector = new StreamReader(pRuta);
+            String line = " ";
 
+            while(line != null)
+            {
+                line = lector.ReadLine();
+                temp = importarDatos(line);
+
+                guardar(temp, darNumRegistros() + 1);
             }
+
+            lector.Close();
         }
+
+        public Dulce importarDatos(String pTexto)
+        {
+            String[] partes = pTexto.Split(';');
+
+            Dulce c = new Dulce(partes[0], Convert.ToDateTime(partes[1]), Int32.Parse(partes[2]), double.Parse(partes[3]), true);
+            return c;
+
+        }
+
+
+
     }
 }
 
