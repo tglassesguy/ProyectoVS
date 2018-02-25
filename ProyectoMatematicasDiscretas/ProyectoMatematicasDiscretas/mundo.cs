@@ -45,16 +45,26 @@ namespace ProyectoMatematicasDiscretas
 
         public Dulce subirInformacion(int pos)
         {
+            Dulce d;
             String data = cargarRegistro(pos);
-            String temp1, temp2, temp3, temp4;
-            temp1 = data.Substring(0,MAX_NOMBRE).Trim(' '); 
-            temp2 = data.Substring(MAX_NOMBRE, MAX_FECHA).Trim(' ');
-            temp3 = data.Substring(MAX_NOMBRE + MAX_FECHA, MAX_CANTIDAD).Trim(' ');
-            temp4 = data.Substring(MAX_NOMBRE + MAX_FECHA + MAX_CANTIDAD, MAX_PRECIO).Trim(' ');
 
-            Dulce D = new Dulce(temp1,Convert.ToDateTime(temp2),Convert.ToInt32(temp3),Convert.ToDouble(temp4), true);
+            if (data.StartsWith("/!/"))
+            {
+                String fakeDate = "01/01/2018";
+                d = new Dulce("", Convert.ToDateTime(fakeDate), 0, 0, false);
+            }
+            else
+            {
+                String temp1, temp2, temp3, temp4;
+                temp1 = data.Substring(0, MAX_NOMBRE).Trim(' ');
+                temp2 = data.Substring(MAX_NOMBRE, MAX_FECHA).Trim(' ');
+                temp3 = data.Substring(MAX_NOMBRE + MAX_FECHA, MAX_CANTIDAD).Trim(' ');
+                temp4 = data.Substring(MAX_NOMBRE + MAX_FECHA + MAX_CANTIDAD, MAX_PRECIO).Trim(' ');
 
-            return D;
+                d = new Dulce(temp1, Convert.ToDateTime(temp2), Convert.ToInt32(temp3), Convert.ToDouble(temp4), true);
+            }
+
+            return d;
             
         }
         public void Modificar(String nombre, DateTime fecha, String cantidad, String precio , int pos)
@@ -126,6 +136,8 @@ namespace ProyectoMatematicasDiscretas
 
             while(line != null)
             {
+                //la condición del while no se está evaluando.
+
                 line = lector.ReadLine();
                 temp = importarDatos(line);
 
@@ -141,6 +153,18 @@ namespace ProyectoMatematicasDiscretas
 
             Dulce c = new Dulce(partes[0], Convert.ToDateTime(partes[1]), Int32.Parse(partes[2]), double.Parse(partes[3]), true);
             return c;
+
+        }
+
+        public void eliminarRegistro(int pPos)
+        {
+            String deleteData = "/!/";
+            deleteData += new string('%', Dulce.TAM_DULCE - 3);
+            archivo = new FileStream( darRuta(), FileMode.Open);
+
+            archivo.Seek(TAM_DATA * (pPos - 1), SeekOrigin.Begin);
+            archivo.Write(Encoding.ASCII.GetBytes(deleteData), 0, deleteData.Length);
+            archivo.Close();
 
         }
 

@@ -40,11 +40,20 @@ namespace ProyectoMatematicasDiscretas
 
         public void pintarEnPantalla(Dulce pDulce)
         {
-            String mensaje = "Nombre: " + pDulce.getNombre() + "\n" 
-                            + "Fecha: " + pDulce.getFecha().ToString() + "\n" 
-                            + "Cantidad: " + pDulce.getCantidad() + " paquetes." + "\n" 
-                            + "Precio:$" + pDulce.getPrecio();
+            String mensaje;
 
+            if(pDulce.getEstado())
+            {
+                mensaje = "Nombre: " + pDulce.getNombre() + "\n"
+                        + "Fecha: " + pDulce.getFecha().ToString() + "\n"
+                        + "Cantidad: " + pDulce.getCantidad() + " paquetes." + "\n"
+                        + "Precio:$" + pDulce.getPrecio();
+            }
+            else
+            {
+                mensaje = "Éste registro se encuentra eliminado.";
+            }
+            
             RITtextos.Clear();
             RITtextos.Text = mensaje;
         }
@@ -137,6 +146,7 @@ namespace ProyectoMatematicasDiscretas
             btmAgregarFinal.Enabled = true;
             btmModificar.Enabled = true;
             txtBusqueda.Enabled = true;
+            btmEliminar.Enabled = true;
      
             MessageBox.Show("Se ha modificado el registro exitosamente.");
         }
@@ -268,6 +278,20 @@ namespace ProyectoMatematicasDiscretas
 
         private void btmEliminar_Click(object sender, EventArgs e)
         {
+            int pos = Int32.Parse(txtBusqueda.Text);
+
+            DialogResult result = MessageBox.Show("¿Seguro que desea eliminar el registro actual?", "Eliminar Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (result.Equals(DialogResult.OK))
+            {
+                codigo.eliminarRegistro(pos);
+                pintarEnPantalla(codigo.subirInformacion(pos));
+            }
+            else
+            {
+                //no hace nada.
+            }
+
+
             /*
             int pos = int.Parse(txtBusqueda.Text);
 
