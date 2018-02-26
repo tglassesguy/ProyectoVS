@@ -142,8 +142,7 @@ namespace ProyectoMatematicasDiscretas
             btmFinalizarModifcacion.Enabled = false;
             btmCargarInicio.Enabled = true;
             btmCargarFinal.Enabled = true;
-            btmAgregarInicio.Enabled = true;
-            btmAgregarFinal.Enabled = true;
+            btmAgregar.Enabled = true;
             btmModificar.Enabled = true;
             txtBusqueda.Enabled = true;
             btmEliminar.Enabled = true;
@@ -168,18 +167,26 @@ namespace ProyectoMatematicasDiscretas
 
         private void btmAgregarFinal_Click(object sender, EventArgs e)
         {
-            //TODO try-catch
-            double temp1 = Convert.ToDouble(txtPrecio.Text);
-            int temp2 = Convert.ToInt32(txtCantidad.Text);
+            try
+            {              
+                double temp1 = codigo.convertirPrecio(txtPrecio.Text);
+                int temp2 = codigo.convertirCantidad(txtCantidad.Text);
+                
+                Dulce t = new Dulce(txtNombre.Text, dtpFecha.Value, temp2, temp1, true);
 
-            Dulce t = new Dulce(txtNombre.Text, dtpFecha.Value, temp2, temp1, true);
+                codigo.guardar(t, codigo.darNumRegistros() + 1);
+                actualizarRegistros();
+                limpiar();
 
-            codigo.guardar(t, codigo.darNumRegistros()+1);
-            actualizarRegistros();
-            limpiar();
-            
-
-            MessageBox.Show("Se ha guardado el registro al final del archivo.");
+                MessageBox.Show("Se ha guardado el registro");
+            }                           
+                
+            catch (Exception m) 
+            {
+                
+                MessageBox.Show(m.Message);
+                
+            }
         }
 
         private void RITtextos_TextChanged(object sender, EventArgs e)
@@ -189,17 +196,24 @@ namespace ProyectoMatematicasDiscretas
 
         private void btmBusqueda_Click(object sender, EventArgs e)
         {
-            //TODO  HACER TRY-CATCH AQUI
-            if(txtBusqueda.Text == "" | txtBusqueda.Text == null)
+            try
             {
-                MessageBox.Show("Por favor, indicar la posición del registro. Recuerde que hay " + 5 /* cambiar esto*/ + " registros en la base de datos.");
+                if (txtBusqueda.Text == "" | txtBusqueda.Text == null)
+                {
+                    MessageBox.Show("Por favor, indicar la posición del registro. Recuerde que hay " + 5 /* cambiar esto*/ + " registros en la base de datos.");
+                }
+                else
+                {
+                    pintarEnPantalla(codigo.subirInformacion(Int32.Parse(txtBusqueda.Text)));
+                }
             }
-            else
+            catch 
             {
-                pintarEnPantalla(codigo.subirInformacion(Int32.Parse(txtBusqueda.Text)));
+                MessageBox.Show("Debe ingresar una posición menor a: "+ codigo.darNumRegistros());
             }
+            
         }
-
+            
         public String darFormato(int pos)
         {
             /*   String[] partes = codigo.subirInformacion(pos);
@@ -233,8 +247,7 @@ namespace ProyectoMatematicasDiscretas
             btmFinalizarModifcacion.Enabled = true;
             btmCargarInicio.Enabled = false;
             btmCargarFinal.Enabled = false;
-            btmAgregarInicio.Enabled = false;
-            btmAgregarFinal.Enabled = false;
+            btmAgregar.Enabled = false;
             btmEliminar.Enabled = false;
         }
 
@@ -262,13 +275,38 @@ namespace ProyectoMatematicasDiscretas
         {
             if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
+                RITtextos.Clear();
+                txtBusqueda.Clear();
                 txtRutaArchivo.Text = openFileDialog1.FileName;
                 codigo.setRuta(openFileDialog1.FileName);
                 actualizarRegistros();
                 pnlRegistro.Enabled = true;
-                pnlCargar.Enabled = true;
-            }
 
+
+                try
+                {
+                    if (codigo.darNumRegistros() != 0) 
+                    {
+                        txtBusqueda.Text = "1";
+                        pintarEnPantalla(codigo.subirInformacion(Int32.Parse(txtBusqueda.Text)));
+                        pnlCargar.Enabled = true;
+                    }
+                    else
+                    {
+                        pnlCargar.Enabled = false;
+                        btmAnterior.Enabled = false;
+                        btmSiguiente.Enabled = false;
+                    }
+                }
+                catch 
+                {
+                    txtRutaArchivo.Clear();
+                    pnlRegistro.Enabled = false;
+                    MessageBox.Show("Abrir un archivo de texto plano o .txt");
+                    
+                }
+                
+            }
         }
 
         private void labArchivo_Click(object sender, EventArgs e)

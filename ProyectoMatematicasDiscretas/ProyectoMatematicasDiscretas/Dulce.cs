@@ -20,15 +20,17 @@ namespace ProyectoMatematicasDiscretas
         private double precio;
         private bool estado;
 
-        public Dulce( String pNombre, DateTime pFecha, int pCantidad, double pPrecio , bool pEstado)
+        public Dulce( String pNombre, DateTime pFecha, int pCantidad, double pPrecio , bool pEstado) 
         {
+           
             nombre = pNombre;
             fecha = pFecha;
             cantidad = pCantidad;
             precio = pPrecio;
             estado = pEstado;
 
-            verificarInvariante();
+            verificarDatos();
+            
         }
 
         public void setNombre( String pNombre)
@@ -79,10 +81,30 @@ namespace ProyectoMatematicasDiscretas
             return estado;
         }
 
-        public void verificarInvariante()
+        public void verificarDatos()
         {
-            //TODO - Pendiente.
-        }
+            Exception jeff;
+            if (nombre == null || nombre == "")
+            {
+                jeff = new Exception("Ingrese un nombre válido.");
+                throw jeff;
+            }
+            if (fecha.CompareTo(DateTime.Now) == 1)
+            {
+                jeff = new Exception("Ingrese una fecha anterior a la fecha de hoy.");
+                throw jeff;
+            }
+            if (cantidad.Equals(null) || cantidad.Equals(""))
+            {
+                jeff = new Exception("Ingrese una cantidad válida.");
+                throw jeff;
+            }
+            if (precio.Equals(null) || precio.Equals(""))
+            {
+                jeff = new Exception("Ingrese un precio válido.");
+                throw jeff;
+            }
+        }   
         
 
     }

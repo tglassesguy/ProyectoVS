@@ -167,6 +167,42 @@ namespace ProyectoMatematicasDiscretas
             archivo.Close();
 
         }
+         
+        public int convertirCantidad(String pCantidad)
+        {
+            int resultado;
+
+            try
+            {
+                resultado = Int32.Parse(pCantidad);
+            }
+            catch (Exception m)
+            {
+                m = new Exception("Ingresar un valor numérico válido para la cantidad.");
+                throw m;
+            }
+
+            return resultado;
+
+        }
+
+        public double convertirPrecio(String pPrecio)
+        {
+
+            double resultado;
+
+            try
+            {
+                resultado = Convert.ToDouble(pPrecio);
+            }
+            catch (Exception m)
+            {
+                m = new Exception("Ingresar un valor numérico válido para el precio.");
+                throw m;
+            }
+
+            return resultado;
+        }
 
 
 

@@ -37,9 +37,8 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.btmAgregarFinal = new System.Windows.Forms.Button();
+            this.btmAgregar = new System.Windows.Forms.Button();
             this.btmFinalizarModifcacion = new System.Windows.Forms.Button();
-            this.btmAgregarInicio = new System.Windows.Forms.Button();
             this.pnlCargar = new System.Windows.Forms.Panel();
             this.btmVolcar = new System.Windows.Forms.Button();
             this.btmEliminar = new System.Windows.Forms.Button();
@@ -143,42 +142,30 @@
             this.txtPrecio.Size = new System.Drawing.Size(181, 20);
             this.txtPrecio.TabIndex = 9;
             // 
-            // btmAgregarFinal
+            // btmAgregar
             // 
-            this.btmAgregarFinal.BackColor = System.Drawing.Color.White;
-            this.btmAgregarFinal.Location = new System.Drawing.Point(407, 69);
-            this.btmAgregarFinal.Margin = new System.Windows.Forms.Padding(2);
-            this.btmAgregarFinal.Name = "btmAgregarFinal";
-            this.btmAgregarFinal.Size = new System.Drawing.Size(209, 27);
-            this.btmAgregarFinal.TabIndex = 11;
-            this.btmAgregarFinal.Text = "Agregar al final";
-            this.btmAgregarFinal.UseVisualStyleBackColor = false;
-            this.btmAgregarFinal.Click += new System.EventHandler(this.btmAgregarFinal_Click);
+            this.btmAgregar.BackColor = System.Drawing.Color.White;
+            this.btmAgregar.Location = new System.Drawing.Point(407, 45);
+            this.btmAgregar.Margin = new System.Windows.Forms.Padding(2);
+            this.btmAgregar.Name = "btmAgregar";
+            this.btmAgregar.Size = new System.Drawing.Size(209, 39);
+            this.btmAgregar.TabIndex = 11;
+            this.btmAgregar.Text = "Agregar";
+            this.btmAgregar.UseVisualStyleBackColor = false;
+            this.btmAgregar.Click += new System.EventHandler(this.btmAgregarFinal_Click);
             // 
             // btmFinalizarModifcacion
             // 
             this.btmFinalizarModifcacion.BackColor = System.Drawing.Color.White;
             this.btmFinalizarModifcacion.Enabled = false;
-            this.btmFinalizarModifcacion.Location = new System.Drawing.Point(407, 101);
+            this.btmFinalizarModifcacion.Location = new System.Drawing.Point(407, 86);
             this.btmFinalizarModifcacion.Margin = new System.Windows.Forms.Padding(2);
             this.btmFinalizarModifcacion.Name = "btmFinalizarModifcacion";
-            this.btmFinalizarModifcacion.Size = new System.Drawing.Size(209, 27);
+            this.btmFinalizarModifcacion.Size = new System.Drawing.Size(209, 39);
             this.btmFinalizarModifcacion.TabIndex = 12;
             this.btmFinalizarModifcacion.Text = "Finalizar modificación";
             this.btmFinalizarModifcacion.UseVisualStyleBackColor = false;
             this.btmFinalizarModifcacion.Click += new System.EventHandler(this.btmAgregarAUnPunto_Click);
-            // 
-            // btmAgregarInicio
-            // 
-            this.btmAgregarInicio.BackColor = System.Drawing.Color.White;
-            this.btmAgregarInicio.Location = new System.Drawing.Point(407, 38);
-            this.btmAgregarInicio.Margin = new System.Windows.Forms.Padding(2);
-            this.btmAgregarInicio.Name = "btmAgregarInicio";
-            this.btmAgregarInicio.Size = new System.Drawing.Size(209, 27);
-            this.btmAgregarInicio.TabIndex = 14;
-            this.btmAgregarInicio.Text = "Agregar al inicio";
-            this.btmAgregarInicio.UseVisualStyleBackColor = false;
-            this.btmAgregarInicio.Click += new System.EventHandler(this.btmAgregarInicio_Click);
             // 
             // pnlCargar
             // 
@@ -314,7 +301,6 @@
             // 
             // btmSiguiente
             // 
-            this.btmSiguiente.Enabled = false;
             this.btmSiguiente.Location = new System.Drawing.Point(124, 221);
             this.btmSiguiente.Margin = new System.Windows.Forms.Padding(2);
             this.btmSiguiente.Name = "btmSiguiente";
@@ -326,7 +312,6 @@
             // 
             // btmAnterior
             // 
-            this.btmAnterior.Enabled = false;
             this.btmAnterior.Location = new System.Drawing.Point(23, 221);
             this.btmAnterior.Margin = new System.Windows.Forms.Padding(2);
             this.btmAnterior.Name = "btmAnterior";
@@ -387,10 +372,9 @@
             this.pnlRegistro.Controls.Add(this.label4);
             this.pnlRegistro.Controls.Add(this.txtNombre);
             this.pnlRegistro.Controls.Add(this.txtCantidad);
-            this.pnlRegistro.Controls.Add(this.btmAgregarInicio);
             this.pnlRegistro.Controls.Add(this.txtPrecio);
             this.pnlRegistro.Controls.Add(this.btmFinalizarModifcacion);
-            this.pnlRegistro.Controls.Add(this.btmAgregarFinal);
+            this.pnlRegistro.Controls.Add(this.btmAgregar);
             this.pnlRegistro.Enabled = false;
             this.pnlRegistro.Location = new System.Drawing.Point(-8, 172);
             this.pnlRegistro.Name = "pnlRegistro";
@@ -468,9 +452,8 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.TextBox txtPrecio;
-        private System.Windows.Forms.Button btmAgregarFinal;
+        private System.Windows.Forms.Button btmAgregar;
         private System.Windows.Forms.Button btmFinalizarModifcacion;
-        private System.Windows.Forms.Button btmAgregarInicio;
         private System.Windows.Forms.Panel pnlCargar;
         private System.Windows.Forms.Button btmSiguiente;
         private System.Windows.Forms.Button btmAnterior;
