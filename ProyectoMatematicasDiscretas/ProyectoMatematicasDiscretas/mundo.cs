@@ -205,6 +205,26 @@ namespace ProyectoMatematicasDiscretas
             return resultado;
         }
 
+        public void verificarPosicion(String pPos)
+        {
+            int prueba;
+            Exception m;
+            try
+            {
+                prueba = Int32.Parse(pPos);
+
+            }
+            catch
+            {
+                throw m = new Exception("Debe ingresar un número, no un caracter.");
+            }
+
+            if (prueba < 1 || prueba > darNumRegistros())
+            {
+                throw m = new Exception("Debe ingresar un número de registro mayor que 0 y menor que " + (darNumRegistros() + 1) + ".");
+            }
+        }
+
 
 
     }

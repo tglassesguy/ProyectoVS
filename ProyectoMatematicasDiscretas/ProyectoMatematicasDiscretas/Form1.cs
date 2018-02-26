@@ -212,12 +212,14 @@ namespace ProyectoMatematicasDiscretas
         {
             try
             {
-                pintarEnPantalla(codigo.subirInformacion(Int32.Parse(txtBusqueda.Text)));
+                codigo.verificarPosicion(txtBusqueda.Text);
+                int pos = Int32.Parse(txtBusqueda.Text);
+                pintarEnPantalla(codigo.subirInformacion(pos));
                 
             }
-            catch 
+            catch (Exception m)
             {
-                MessageBox.Show("Ingrese una número mayor a 0 y menor a " + codigo.darNumRegistros());
+                MessageBox.Show(m.Message);
             }
             
         }
