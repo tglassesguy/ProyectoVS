@@ -127,27 +127,35 @@ namespace ProyectoMatematicasDiscretas
 
         private void btmAgregarAUnPunto_Click(object sender, EventArgs e)
         {
-            int pos = int.Parse(txtBusqueda.Text);
+            try
+            {
+                int pos = int.Parse(txtBusqueda.Text);
 
-            double temp1 = Convert.ToDouble(txtPrecio.Text);
-            int temp2 = Convert.ToInt32(txtCantidad.Text);
+                double temp1 = codigo.convertirPrecio(txtPrecio.Text);
+                int temp2 = codigo.convertirCantidad(txtCantidad.Text);
+                
+                Dulce t = new Dulce(txtNombre.Text, dtpFecha.Value, temp2, temp1, true);
 
-            Dulce t = new Dulce(txtNombre.Text, dtpFecha.Value, temp2, temp1, true);
+                codigo.guardar(t, pos);
+                pintarEnPantalla(t);
+                actualizarRegistros();
+                limpiar();
 
-            codigo.guardar(t, pos);
-            pintarEnPantalla(t);
-            actualizarRegistros();
-            limpiar();
+                btmFinalizarModifcacion.Enabled = false;
+                btmCargarInicio.Enabled = true;
+                btmCargarFinal.Enabled = true;
+                btmAgregar.Enabled = true;
+                btmModificar.Enabled = true;
+                txtBusqueda.Enabled = true;
+                btmEliminar.Enabled = true;
 
-            btmFinalizarModifcacion.Enabled = false;
-            btmCargarInicio.Enabled = true;
-            btmCargarFinal.Enabled = true;
-            btmAgregar.Enabled = true;
-            btmModificar.Enabled = true;
-            txtBusqueda.Enabled = true;
-            btmEliminar.Enabled = true;
-     
-            MessageBox.Show("Se ha modificado el registro exitosamente.");
+                MessageBox.Show("Se ha modificado el registro exitosamente.");
+            }
+            catch (Exception m)
+            {
+                MessageBox.Show(m.Message);
+            }
+            
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -178,6 +186,12 @@ namespace ProyectoMatematicasDiscretas
                 actualizarRegistros();
                 limpiar();
 
+                if(!pnlCargar.Enabled)
+                {
+                    pnlCargar.Enabled = true;
+                    pintarEnPantalla(codigo.subirInformacion(1));
+                }
+
                 MessageBox.Show("Se ha guardado el registro");
             }                           
                 
@@ -198,18 +212,12 @@ namespace ProyectoMatematicasDiscretas
         {
             try
             {
-                if (txtBusqueda.Text == "" | txtBusqueda.Text == null)
-                {
-                    MessageBox.Show("Por favor, indicar la posición del registro. Recuerde que hay " + 5 /* cambiar esto*/ + " registros en la base de datos.");
-                }
-                else
-                {
-                    pintarEnPantalla(codigo.subirInformacion(Int32.Parse(txtBusqueda.Text)));
-                }
+                pintarEnPantalla(codigo.subirInformacion(Int32.Parse(txtBusqueda.Text)));
+                
             }
             catch 
             {
-                MessageBox.Show("Debe ingresar una posición menor a: "+ codigo.darNumRegistros());
+                MessageBox.Show("Ingrese una número mayor a 0 y menor a " + codigo.darNumRegistros());
             }
             
         }
@@ -316,20 +324,29 @@ namespace ProyectoMatematicasDiscretas
 
         private void btmEliminar_Click(object sender, EventArgs e)
         {
-            int pos = Int32.Parse(txtBusqueda.Text);
-
-            DialogResult result = MessageBox.Show("¿Seguro que desea eliminar el registro actual?", "Eliminar Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            if (result.Equals(DialogResult.OK))
+            try
             {
-                codigo.eliminarRegistro(pos);
-                pintarEnPantalla(codigo.subirInformacion(pos));
+                //Esta dentro.
+                int pos = Int32.Parse(txtBusqueda.Text);
+                pintarEnPantalla(codigo.subirInformacion(Int32.Parse(txtBusqueda.Text)));
+
+                DialogResult result = MessageBox.Show("¿Seguro que desea eliminar el registro actual?", "Eliminar Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+
+                if (result.Equals(DialogResult.OK))
+                {
+                    codigo.eliminarRegistro(pos);
+                    pintarEnPantalla(codigo.subirInformacion(pos));
+                }
+                else
+                {
+                    //no hace nada.
+                }
             }
-            else
+            catch
             {
-                //no hace nada.
+                MessageBox.Show("Ingrese  mayor a 0 y menor a " + codigo.darNumRegistros());
             }
-
-
+            
             /*
             int pos = int.Parse(txtBusqueda.Text);
 

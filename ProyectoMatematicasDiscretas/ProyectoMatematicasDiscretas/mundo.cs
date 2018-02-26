@@ -51,7 +51,7 @@ namespace ProyectoMatematicasDiscretas
             if (data.StartsWith("/!/"))
             {
                 String fakeDate = "01/01/2018";
-                d = new Dulce("", Convert.ToDateTime(fakeDate), 0, 0, false);
+                d = new Dulce(" ", Convert.ToDateTime(fakeDate), 0, 0, false);
             }
             else
             {
@@ -158,9 +158,10 @@ namespace ProyectoMatematicasDiscretas
 
         public void eliminarRegistro(int pPos)
         {
+            
             String deleteData = "/!/";
             deleteData += new string('%', Dulce.TAM_DULCE - 3);
-            archivo = new FileStream( darRuta(), FileMode.Open);
+            archivo = new FileStream(darRuta(), FileMode.Open);
 
             archivo.Seek(TAM_DATA * (pPos - 1), SeekOrigin.Begin);
             archivo.Write(Encoding.ASCII.GetBytes(deleteData), 0, deleteData.Length);

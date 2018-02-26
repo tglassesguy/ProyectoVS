@@ -426,7 +426,7 @@
             this.Controls.Add(this.pnlRegistro);
             this.Controls.Add(this.panelTitulo);
             this.Controls.Add(this.pnlCargar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GUIArchivoDulce";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
