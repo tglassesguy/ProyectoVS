@@ -79,21 +79,6 @@ namespace ProyectoMatematicasDiscretas
             MessageBox.Show("Se ha cargado el ultimo registro.");
         }
 
-        private void btmAgregarInicio_Click(object sender, EventArgs e)
-        {
-            //Crea el objeto dulce.
-            double temp1 = Convert.ToDouble(txtPrecio.Text);
-            int temp2 = Convert.ToInt32(txtCantidad.Text);
-
-            Dulce t = new Dulce(txtNombre.Text, dtpFecha.Value, temp2 , temp1 ,true);
-
-            codigo.guardar(t, 1);
-            actualizarRegistros();
-            limpiar();
-            
-            MessageBox.Show("Se ha guardado el registro en el inicio del archivo");
-        }
-
         public void limpiar()
         {
             txtNombre.Clear();
@@ -124,6 +109,8 @@ namespace ProyectoMatematicasDiscretas
                 btmModificar.Enabled = true;
                 txtBusqueda.Enabled = true;
                 btmEliminar.Enabled = true;
+                btmVolcar.Enabled = true;
+                btmVolcarDesorden.Enabled = true;
 
                 MessageBox.Show("Se ha modificado el registro exitosamente.");
             }
@@ -205,6 +192,8 @@ namespace ProyectoMatematicasDiscretas
                 btmCargarFinal.Enabled = false;
                 btmAgregar.Enabled = false;
                 btmEliminar.Enabled = false;
+                btmVolcar.Enabled = false;
+                btmVolcarDesorden.Enabled = false;
             }
             catch (Exception m)
             {
@@ -225,7 +214,6 @@ namespace ProyectoMatematicasDiscretas
                 pnlRegistro.Enabled = true;
                 btmVolcar.Enabled = true;
                 btmVolcarDesorden.Enabled = true;
-
 
                 try
                 {
