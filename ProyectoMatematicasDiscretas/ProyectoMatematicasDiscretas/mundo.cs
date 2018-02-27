@@ -67,21 +67,6 @@ namespace ProyectoMatematicasDiscretas
             return d;
             
         }
-        public void Modificar(String nombre, DateTime fecha, String cantidad, String precio , int pos)
-        {
-            String data = "";
-
-            data += ajustarData(nombre, MAX_NOMBRE);
-            data += ajustarData(fecha.ToString(), MAX_FECHA);
-            data += ajustarData(cantidad, MAX_CANTIDAD);
-            data += ajustarData(precio, MAX_PRECIO);
-
-            archivo = new FileStream(darRuta(), FileMode.Open);
-
-            archivo.Seek(TAM_DATA * (pos - 1), SeekOrigin.Begin);
-            archivo.Write(Encoding.ASCII.GetBytes(data), 0, data.Length);
-            archivo.Close();
-        }
      
         public String ajustarData(String text, int max)
         {
@@ -128,7 +113,7 @@ namespace ProyectoMatematicasDiscretas
             
         }
 
-        public void volcar(String pRuta)
+        public void volcar(String pRuta ,Boolean pOrden)
         {
             Dulce temp; 
             StreamReader lector = new StreamReader(pRuta);
@@ -137,9 +122,8 @@ namespace ProyectoMatematicasDiscretas
             line = lector.ReadLine();
 
             while (line != null)
-            {
-                //la condición del while no se está evaluando.
-                temp = importarDatos(line);
+            { 
+                temp = importarDatos(line, pOrden);
                 guardar(temp, darNumRegistros() + 1);
                 line = lector.ReadLine();
             } 
@@ -147,13 +131,62 @@ namespace ProyectoMatematicasDiscretas
             lector.Close();
         }
 
-        public Dulce importarDatos(String pTexto)
+        public Dulce importarDatos(String pTexto, Boolean pOrden)
         {
             String[] partes = pTexto.Split(';');
+            Dulce c;
 
-            Dulce c = new Dulce(partes[0], Convert.ToDateTime(partes[1]), Int32.Parse(partes[2]), double.Parse(partes[3]), true);
+            if (pOrden)
+            {
+                c = new Dulce(partes[0], Convert.ToDateTime(partes[1]), Int32.Parse(partes[2]), Convert.ToDouble(partes[3]), true);
+            }
+            else
+            {
+
+                String tempNombre = "";
+                DateTime tempFecha = DateTime.Now;
+                int tempCantidad = 0;
+                double tempPrecio = 0;
+
+                for (int i = 0; i < partes.Length; i++)
+                {
+                    if (partes[i].Contains(","))
+                    {
+                        tempPrecio = Convert.ToDouble(partes[i]);
+                    }
+                    else if (partes[i].Contains("/"))
+                    {
+                        tempFecha = Convert.ToDateTime(partes[i]);
+                    }
+                    else if (isNumeric(partes[i]))
+                    {
+                        tempCantidad = Int32.Parse(partes[i]);
+                    }
+                    else
+                    {
+                        tempNombre = partes[i];
+                    }
+
+                }
+
+                 c = new Dulce(tempNombre, tempFecha, tempCantidad, tempPrecio, true);
+            }
+
             return c;
 
+        }
+        public Boolean isNumeric(String pText)
+        {
+            try
+            {
+                int temp = Int32.Parse(pText);
+                return true;
+
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public void eliminarRegistro(int pPos)

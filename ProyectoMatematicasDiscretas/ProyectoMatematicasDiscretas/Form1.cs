@@ -25,10 +25,6 @@ namespace ProyectoMatematicasDiscretas
  
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btmCargarInicio_Click(object sender, EventArgs e)
         {
@@ -61,10 +57,6 @@ namespace ProyectoMatematicasDiscretas
             RITtextos.Text = mensaje;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-           
-        }
 
         public void actualizarRegistros()
         {
@@ -78,10 +70,6 @@ namespace ProyectoMatematicasDiscretas
             }
         }
 
-        private void btmAnterior_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btmCargarFinal_Click(object sender, EventArgs e)
         {
@@ -89,21 +77,6 @@ namespace ProyectoMatematicasDiscretas
             pintarEnPantalla(temp);
             txtBusqueda.Text = codigo.darNumRegistros().ToString();
             MessageBox.Show("Se ha cargado el ultimo registro.");
-        }
-
-        private void pnlPanelCargar_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btmSiguiente_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btmAgregarInicio_Click(object sender, EventArgs e)
@@ -161,21 +134,6 @@ namespace ProyectoMatematicasDiscretas
             
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblSubtitulo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPosicionAgregar_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btmAgregarFinal_Click(object sender, EventArgs e)
         {
             try
@@ -205,10 +163,6 @@ namespace ProyectoMatematicasDiscretas
             }
         }
 
-        private void RITtextos_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btmBusqueda_Click(object sender, EventArgs e)
         {
@@ -226,18 +180,6 @@ namespace ProyectoMatematicasDiscretas
             
         }
             
-        public String darFormato(int pos)
-        {
-            /*   String[] partes = codigo.subirInformacion(pos);
-               String mensaje = "Nombre: " + partes[0] + "\n" + "Fecha: " + partes[1] + "\n" + "Cantidad: " + partes[2] + " paquetes." + "\n" + "Precio:$" + partes[3];
-               return mensaje;
-               */
-            return "ñaña";
-        }
-        private void lblTitulo_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btmModificar_Click(object sender, EventArgs e)
         {
@@ -271,26 +213,6 @@ namespace ProyectoMatematicasDiscretas
             
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label5_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblTotal_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -302,6 +224,7 @@ namespace ProyectoMatematicasDiscretas
                 actualizarRegistros();
                 pnlRegistro.Enabled = true;
                 btmVolcar.Enabled = true;
+                btmVolcarDesorden.Enabled = true;
 
 
                 try
@@ -315,9 +238,9 @@ namespace ProyectoMatematicasDiscretas
                     else
                     {
                         pnlCargar.Enabled = false;
-                        btmAnterior.Enabled = false;
-                        btmSiguiente.Enabled = false;
                     }
+
+                    txtRutaArchivo.Enabled = false;
                 }
                 catch 
                 {
@@ -330,16 +253,11 @@ namespace ProyectoMatematicasDiscretas
             }
         }
 
-        private void labArchivo_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btmEliminar_Click(object sender, EventArgs e)
         {
             try
             {
-                //Esta dentro.
                 codigo.verificarPosicion(txtBusqueda.Text);
                 int pos = Int32.Parse(txtBusqueda.Text);
                 pintarEnPantalla(codigo.subirInformacion(pos));
@@ -360,34 +278,113 @@ namespace ProyectoMatematicasDiscretas
             {
                 MessageBox.Show(m.Message);
             }
-            
-            /*
-            int pos = int.Parse(txtBusqueda.Text);
-
-            codigo.Modificar(txtNombre.Text, dtpFecha.Value, txtCantidad.Text, txtPrecio.Text, pos);
-            
-            String mensaje = darFormato(pos).ToString(s);
-            mensaje.Remove(0, mundo.TAM_DATA);
-            pintarEnPantalla(mensaje);
-            actualizarRegistros();
-            MessageBox.Show("Se ha eliminado el registro" + " " + pos + " " + "de la base de datos");
-            */
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                codigo.volcar(openFileDialog1.FileName);
+                codigo.volcar(openFileDialog1.FileName, true);
                 actualizarRegistros();
                 MessageBox.Show("Se ha cargado los registros del archivo: " + openFileDialog1.FileName);
                 pnlCargar.Enabled = true;
             }
         }
 
+
+        private void btmAnterior_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+           
+        }
+
+        private void pnlPanelCargar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btmSiguiente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSubtitulo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPosicionAgregar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RITtextos_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void txtBusqueda_TextChanged(object sender, EventArgs e)
         {
 
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label5_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTotal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+        private void labArchivo_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void lblTitulo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                codigo.volcar(openFileDialog1.FileName, false);
+                actualizarRegistros();
+                MessageBox.Show("Se ha cargado los registros del archivo: " + openFileDialog1.FileName);
+                pnlCargar.Enabled = true;
+            }
         }
     }
 }

@@ -83,26 +83,26 @@ namespace ProyectoMatematicasDiscretas
 
         public void verificarDatos()
         {
-            Exception jeff;
+            Exception e;
             if (nombre == null || nombre == "")
             {
-                jeff = new Exception("Ingrese un nombre válido.");
-                throw jeff;
+                e = new Exception("Ingrese un nombre válido.");
+                throw e;
             }
             if (fecha.CompareTo(DateTime.Now) == 1)
             {
-                jeff = new Exception("Ingrese una fecha anterior a la fecha de hoy.");
-                throw jeff;
+                e = new Exception("Ingrese una fecha anterior a la fecha de hoy.");
+                throw e;
             }
             if (cantidad.Equals(null) || cantidad.Equals("") || cantidad < 1)
             {
-                jeff = new Exception("Ingrese una cantidad válida.");
-                throw jeff;
+                e = new Exception("Ingrese una cantidad válida.");
+                throw e;
             }
             if (precio.Equals(null) || precio.Equals("") || precio < 0)
             {
-                jeff = new Exception("Ingrese un precio válido.");
-                throw jeff;
+                e = new Exception("Ingrese un precio válido.");
+                throw e;
             }
         }   
         

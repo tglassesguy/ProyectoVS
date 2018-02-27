@@ -39,7 +39,6 @@
             this.btmAgregar = new System.Windows.Forms.Button();
             this.btmFinalizarModifcacion = new System.Windows.Forms.Button();
             this.pnlCargar = new System.Windows.Forms.Panel();
-            this.btmVolcar = new System.Windows.Forms.Button();
             this.btmEliminar = new System.Windows.Forms.Button();
             this.btmModificar = new System.Windows.Forms.Button();
             this.btmBusqueda = new System.Windows.Forms.Button();
@@ -49,9 +48,8 @@
             this.labCargar = new System.Windows.Forms.Label();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.btmCargarInicio = new System.Windows.Forms.Button();
-            this.btmSiguiente = new System.Windows.Forms.Button();
-            this.btmAnterior = new System.Windows.Forms.Button();
             this.btmCargarFinal = new System.Windows.Forms.Button();
+            this.btmVolcar = new System.Windows.Forms.Button();
             this.labAgregar = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.panelTitulo = new System.Windows.Forms.Panel();
@@ -60,6 +58,9 @@
             this.txtRutaArchivo = new System.Windows.Forms.TextBox();
             this.btmRuta = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btmVolcarDesorden = new System.Windows.Forms.Button();
             this.pnlCargar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlRegistro.SuspendLayout();
@@ -68,10 +69,11 @@
             // lblSubtitulo
             // 
             this.lblSubtitulo.AutoSize = true;
+            this.lblSubtitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubtitulo.Location = new System.Drawing.Point(26, 9);
             this.lblSubtitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSubtitulo.Name = "lblSubtitulo";
-            this.lblSubtitulo.Size = new System.Drawing.Size(112, 13);
+            this.lblSubtitulo.Size = new System.Drawing.Size(134, 13);
             this.lblSubtitulo.TabIndex = 1;
             this.lblSubtitulo.Text = "Registrar un producto:";
             this.lblSubtitulo.Click += new System.EventHandler(this.lblSubtitulo_Click);
@@ -176,8 +178,6 @@
             this.pnlCargar.Controls.Add(this.labCargar);
             this.pnlCargar.Controls.Add(this.txtBusqueda);
             this.pnlCargar.Controls.Add(this.btmCargarInicio);
-            this.pnlCargar.Controls.Add(this.btmSiguiente);
-            this.pnlCargar.Controls.Add(this.btmAnterior);
             this.pnlCargar.Controls.Add(this.btmCargarFinal);
             this.pnlCargar.Enabled = false;
             this.pnlCargar.Location = new System.Drawing.Point(-8, 332);
@@ -186,18 +186,6 @@
             this.pnlCargar.Size = new System.Drawing.Size(642, 283);
             this.pnlCargar.TabIndex = 15;
             this.pnlCargar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPanelCargar_Paint);
-            // 
-            // btmVolcar
-            // 
-            this.btmVolcar.Enabled = false;
-            this.btmVolcar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btmVolcar.Location = new System.Drawing.Point(556, 620);
-            this.btmVolcar.Name = "btmVolcar";
-            this.btmVolcar.Size = new System.Drawing.Size(57, 23);
-            this.btmVolcar.TabIndex = 19;
-            this.btmVolcar.Text = "«";
-            this.btmVolcar.UseVisualStyleBackColor = true;
-            this.btmVolcar.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // btmEliminar
             // 
@@ -224,10 +212,11 @@
             // 
             // btmBusqueda
             // 
-            this.btmBusqueda.Location = new System.Drawing.Point(198, 250);
+            this.btmBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btmBusqueda.Location = new System.Drawing.Point(190, 234);
             this.btmBusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.btmBusqueda.Name = "btmBusqueda";
-            this.btmBusqueda.Size = new System.Drawing.Size(31, 22);
+            this.btmBusqueda.Size = new System.Drawing.Size(39, 38);
             this.btmBusqueda.TabIndex = 6;
             this.btmBusqueda.Text = "♀";
             this.btmBusqueda.UseVisualStyleBackColor = true;
@@ -271,18 +260,21 @@
             // labCargar
             // 
             this.labCargar.AutoSize = true;
+            this.labCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labCargar.Location = new System.Drawing.Point(24, 6);
             this.labCargar.Name = "labCargar";
-            this.labCargar.Size = new System.Drawing.Size(78, 13);
+            this.labCargar.Size = new System.Drawing.Size(94, 13);
             this.labCargar.TabIndex = 17;
             this.labCargar.Text = "Cargar registro:";
             // 
             // txtBusqueda
             // 
-            this.txtBusqueda.Location = new System.Drawing.Point(24, 251);
+            this.txtBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusqueda.Location = new System.Drawing.Point(25, 235);
             this.txtBusqueda.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBusqueda.Multiline = true;
             this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(203, 20);
+            this.txtBusqueda.Size = new System.Drawing.Size(203, 37);
             this.txtBusqueda.TabIndex = 5;
             this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
             // 
@@ -298,28 +290,6 @@
             this.btmCargarInicio.UseVisualStyleBackColor = false;
             this.btmCargarInicio.Click += new System.EventHandler(this.btmCargarInicio_Click);
             // 
-            // btmSiguiente
-            // 
-            this.btmSiguiente.Location = new System.Drawing.Point(124, 221);
-            this.btmSiguiente.Margin = new System.Windows.Forms.Padding(2);
-            this.btmSiguiente.Name = "btmSiguiente";
-            this.btmSiguiente.Size = new System.Drawing.Size(105, 26);
-            this.btmSiguiente.TabIndex = 3;
-            this.btmSiguiente.Text = "--->";
-            this.btmSiguiente.UseVisualStyleBackColor = true;
-            this.btmSiguiente.Click += new System.EventHandler(this.btmSiguiente_Click);
-            // 
-            // btmAnterior
-            // 
-            this.btmAnterior.Location = new System.Drawing.Point(23, 221);
-            this.btmAnterior.Margin = new System.Windows.Forms.Padding(2);
-            this.btmAnterior.Name = "btmAnterior";
-            this.btmAnterior.Size = new System.Drawing.Size(105, 26);
-            this.btmAnterior.TabIndex = 2;
-            this.btmAnterior.Text = "<---";
-            this.btmAnterior.UseVisualStyleBackColor = true;
-            this.btmAnterior.Click += new System.EventHandler(this.btmAnterior_Click);
-            // 
             // btmCargarFinal
             // 
             this.btmCargarFinal.BackColor = System.Drawing.Color.White;
@@ -332,12 +302,25 @@
             this.btmCargarFinal.UseVisualStyleBackColor = false;
             this.btmCargarFinal.Click += new System.EventHandler(this.btmCargarFinal_Click);
             // 
+            // btmVolcar
+            // 
+            this.btmVolcar.Enabled = false;
+            this.btmVolcar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btmVolcar.Location = new System.Drawing.Point(351, 614);
+            this.btmVolcar.Name = "btmVolcar";
+            this.btmVolcar.Size = new System.Drawing.Size(57, 31);
+            this.btmVolcar.TabIndex = 19;
+            this.btmVolcar.Text = "«";
+            this.btmVolcar.UseVisualStyleBackColor = true;
+            this.btmVolcar.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // labAgregar
             // 
             this.labAgregar.AutoSize = true;
+            this.labAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labAgregar.Location = new System.Drawing.Point(376, 9);
             this.labAgregar.Name = "labAgregar";
-            this.labAgregar.Size = new System.Drawing.Size(105, 13);
+            this.labAgregar.Size = new System.Drawing.Size(125, 13);
             this.labAgregar.TabIndex = 16;
             this.labAgregar.Text = "Guardar información:";
             this.labAgregar.Click += new System.EventHandler(this.label5_Click);
@@ -387,9 +370,10 @@
             // labArchivo
             // 
             this.labArchivo.AutoSize = true;
+            this.labArchivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labArchivo.Location = new System.Drawing.Point(16, 117);
             this.labArchivo.Name = "labArchivo";
-            this.labArchivo.Size = new System.Drawing.Size(46, 13);
+            this.labArchivo.Size = new System.Drawing.Size(54, 13);
             this.labArchivo.TabIndex = 21;
             this.labArchivo.Text = "Archivo:";
             this.labArchivo.Click += new System.EventHandler(this.labArchivo_Click);
@@ -416,12 +400,46 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(226, 624);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(122, 13);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Volcar datos ordenados:";
+            this.label5.Click += new System.EventHandler(this.label5_Click_2);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(419, 624);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(139, 13);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Volcar datos desordenados:";
+            // 
+            // btmVolcarDesorden
+            // 
+            this.btmVolcarDesorden.Enabled = false;
+            this.btmVolcarDesorden.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btmVolcarDesorden.Location = new System.Drawing.Point(556, 614);
+            this.btmVolcarDesorden.Name = "btmVolcarDesorden";
+            this.btmVolcarDesorden.Size = new System.Drawing.Size(57, 31);
+            this.btmVolcarDesorden.TabIndex = 26;
+            this.btmVolcarDesorden.Text = "«!";
+            this.btmVolcarDesorden.UseVisualStyleBackColor = true;
+            this.btmVolcarDesorden.Click += new System.EventHandler(this.button1_Click_2);
+            // 
             // GUIArchivoDulce
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(243)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(625, 648);
+            this.ClientSize = new System.Drawing.Size(625, 654);
+            this.Controls.Add(this.btmVolcarDesorden);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btmVolcar);
             this.Controls.Add(this.btmRuta);
             this.Controls.Add(this.txtRutaArchivo);
@@ -458,8 +476,6 @@
         private System.Windows.Forms.Button btmAgregar;
         private System.Windows.Forms.Button btmFinalizarModifcacion;
         private System.Windows.Forms.Panel pnlCargar;
-        private System.Windows.Forms.Button btmSiguiente;
-        private System.Windows.Forms.Button btmAnterior;
         private System.Windows.Forms.Button btmCargarFinal;
         private System.Windows.Forms.Button btmCargarInicio;
         private System.Windows.Forms.Button btmBusqueda;
@@ -479,6 +495,9 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btmEliminar;
         private System.Windows.Forms.Button btmVolcar;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btmVolcarDesorden;
     }
 }
 
