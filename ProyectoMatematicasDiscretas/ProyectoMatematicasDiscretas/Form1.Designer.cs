@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUIArchivoDulce));
             this.lblSubtitulo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -170,7 +169,6 @@
             // pnlCargar
             // 
             this.pnlCargar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(243)))), ((int)(((byte)(249)))));
-            this.pnlCargar.Controls.Add(this.btmVolcar);
             this.pnlCargar.Controls.Add(this.btmEliminar);
             this.pnlCargar.Controls.Add(this.btmModificar);
             this.pnlCargar.Controls.Add(this.btmBusqueda);
@@ -185,14 +183,15 @@
             this.pnlCargar.Location = new System.Drawing.Point(-8, 332);
             this.pnlCargar.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCargar.Name = "pnlCargar";
-            this.pnlCargar.Size = new System.Drawing.Size(642, 322);
+            this.pnlCargar.Size = new System.Drawing.Size(642, 283);
             this.pnlCargar.TabIndex = 15;
             this.pnlCargar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPanelCargar_Paint);
             // 
             // btmVolcar
             // 
+            this.btmVolcar.Enabled = false;
             this.btmVolcar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btmVolcar.Location = new System.Drawing.Point(564, 281);
+            this.btmVolcar.Location = new System.Drawing.Point(556, 620);
             this.btmVolcar.Name = "btmVolcar";
             this.btmVolcar.Size = new System.Drawing.Size(57, 23);
             this.btmVolcar.TabIndex = 19;
@@ -345,15 +344,18 @@
             // 
             // dtpFecha
             // 
+            this.dtpFecha.CustomFormat = "dd/MM/yyyy";
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFecha.Location = new System.Drawing.Point(157, 57);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(181, 20);
             this.dtpFecha.TabIndex = 18;
+            this.dtpFecha.Value = new System.DateTime(2018, 2, 26, 0, 0, 0, 0);
             // 
             // panelTitulo
             // 
             this.panelTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.panelTitulo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelTitulo.BackgroundImage")));
+            this.panelTitulo.BackgroundImage = global::ProyectoMatematicasDiscretas.Properties.Resources.dulceria;
             this.panelTitulo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelTitulo.Location = new System.Drawing.Point(-8, 0);
             this.panelTitulo.Name = "panelTitulo";
@@ -420,6 +422,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(243)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(625, 648);
+            this.Controls.Add(this.btmVolcar);
             this.Controls.Add(this.btmRuta);
             this.Controls.Add(this.txtRutaArchivo);
             this.Controls.Add(this.labArchivo);

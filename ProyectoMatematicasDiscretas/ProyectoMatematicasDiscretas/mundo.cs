@@ -51,7 +51,7 @@ namespace ProyectoMatematicasDiscretas
             if (data.StartsWith("/!/"))
             {
                 String fakeDate = "01/01/2018";
-                d = new Dulce(" ", Convert.ToDateTime(fakeDate), 0, 0, false);
+                d = new Dulce(" ", Convert.ToDateTime(fakeDate), 1, 0, false);
             }
             else
             {
@@ -142,7 +142,7 @@ namespace ProyectoMatematicasDiscretas
                 temp = importarDatos(line);
                 guardar(temp, darNumRegistros() + 1);
                 line = lector.ReadLine();
-            }
+            } 
 
             lector.Close();
         }

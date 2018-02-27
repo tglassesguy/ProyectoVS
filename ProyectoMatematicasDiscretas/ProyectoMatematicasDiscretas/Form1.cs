@@ -44,8 +44,11 @@ namespace ProyectoMatematicasDiscretas
 
             if(pDulce.getEstado())
             {
+                String tempFecha = pDulce.getFecha().ToString();
+                String fecha = tempFecha.Substring(0,Dulce.MAX_FECHA);
+
                 mensaje = "Nombre: " + pDulce.getNombre() + "\n"
-                        + "Fecha: " + pDulce.getFecha().ToString() + "\n"
+                        + "Fecha: " + fecha + "\n"
                         + "Cantidad: " + pDulce.getCantidad() + " paquetes." + "\n"
                         + "Precio:$" + pDulce.getPrecio();
             }
@@ -298,6 +301,7 @@ namespace ProyectoMatematicasDiscretas
                 codigo.setRuta(openFileDialog1.FileName);
                 actualizarRegistros();
                 pnlRegistro.Enabled = true;
+                btmVolcar.Enabled = true;
 
 
                 try
@@ -377,6 +381,7 @@ namespace ProyectoMatematicasDiscretas
                 codigo.volcar(openFileDialog1.FileName);
                 actualizarRegistros();
                 MessageBox.Show("Se ha cargado los registros del archivo: " + openFileDialog1.FileName);
+                pnlCargar.Enabled = true;
             }
         }
 

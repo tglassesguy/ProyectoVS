@@ -94,12 +94,12 @@ namespace ProyectoMatematicasDiscretas
                 jeff = new Exception("Ingrese una fecha anterior a la fecha de hoy.");
                 throw jeff;
             }
-            if (cantidad.Equals(null) || cantidad.Equals(""))
+            if (cantidad.Equals(null) || cantidad.Equals("") || cantidad < 1)
             {
                 jeff = new Exception("Ingrese una cantidad válida.");
                 throw jeff;
             }
-            if (precio.Equals(null) || precio.Equals(""))
+            if (precio.Equals(null) || precio.Equals("") || precio < 0)
             {
                 jeff = new Exception("Ingrese un precio válido.");
                 throw jeff;
