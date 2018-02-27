@@ -132,16 +132,16 @@ namespace ProyectoMatematicasDiscretas
         {
             Dulce temp; 
             StreamReader lector = new StreamReader(pRuta);
-            String line = " ";
+            String line;
 
-            while(line != null)
+            line = lector.ReadLine();
+
+            while (line != null)
             {
                 //la condición del while no se está evaluando.
-
-                line = lector.ReadLine();
                 temp = importarDatos(line);
-
                 guardar(temp, darNumRegistros() + 1);
+                line = lector.ReadLine();
             }
 
             lector.Close();

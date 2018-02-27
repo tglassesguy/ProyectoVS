@@ -72,9 +72,9 @@
             this.lblSubtitulo.Location = new System.Drawing.Point(26, 9);
             this.lblSubtitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSubtitulo.Name = "lblSubtitulo";
-            this.lblSubtitulo.Size = new System.Drawing.Size(109, 13);
+            this.lblSubtitulo.Size = new System.Drawing.Size(112, 13);
             this.lblSubtitulo.TabIndex = 1;
-            this.lblSubtitulo.Text = "Registrar un producto";
+            this.lblSubtitulo.Text = "Registrar un producto:";
             this.lblSubtitulo.Click += new System.EventHandler(this.lblSubtitulo_Click);
             // 
             // label1
@@ -83,9 +83,9 @@
             this.label1.Location = new System.Drawing.Point(56, 32);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Nombre :";
+            this.label1.Text = "Nombre:";
             // 
             // label2
             // 
@@ -93,9 +93,9 @@
             this.label2.Location = new System.Drawing.Point(56, 58);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 13);
+            this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Fecha :";
+            this.label2.Text = "Fecha:";
             // 
             // label3
             // 
@@ -103,9 +103,9 @@
             this.label3.Location = new System.Drawing.Point(56, 83);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 13);
+            this.label3.Size = new System.Drawing.Size(73, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Cantidad(pqt) :";
+            this.label3.Text = "Cantidad(pqt):";
             // 
             // label4
             // 
@@ -113,9 +113,9 @@
             this.label4.Location = new System.Drawing.Point(57, 112);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 13);
+            this.label4.Size = new System.Drawing.Size(64, 13);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Precio (pqt) :";
+            this.label4.Text = "Precio (pqt):";
             // 
             // txtNombre
             // 
@@ -336,7 +336,7 @@
             // labAgregar
             // 
             this.labAgregar.AutoSize = true;
-            this.labAgregar.Location = new System.Drawing.Point(374, 15);
+            this.labAgregar.Location = new System.Drawing.Point(376, 9);
             this.labAgregar.Name = "labAgregar";
             this.labAgregar.Size = new System.Drawing.Size(105, 13);
             this.labAgregar.TabIndex = 16;

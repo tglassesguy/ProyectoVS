@@ -194,7 +194,6 @@ namespace ProyectoMatematicasDiscretas
 
                 MessageBox.Show("Se ha guardado el registro");
             }                           
-                
             catch (Exception m) 
             {
                 
@@ -239,26 +238,34 @@ namespace ProyectoMatematicasDiscretas
 
         private void btmModificar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                codigo.verificarPosicion(txtBusqueda.Text);
+                int pos = int.Parse(txtBusqueda.Text);
+                txtBusqueda.Enabled = false;
+                btmModificar.Enabled = false;
 
-            int pos = int.Parse(txtBusqueda.Text);
-            txtBusqueda.Enabled = false;
-            btmModificar.Enabled = false;
+                Dulce datos = codigo.subirInformacion(pos);
+                pintarEnPantalla(datos);
 
-            Dulce datos = codigo.subirInformacion(pos);
-            pintarEnPantalla(datos);
+                txtNombre.Text = datos.getNombre();
+                dtpFecha.Value = datos.getFecha();
+                txtCantidad.Text = datos.getCantidad().ToString();
+                txtPrecio.Text = datos.getPrecio().ToString();
 
-            txtNombre.Text = datos.getNombre();
-            dtpFecha.Value = datos.getFecha();
-            txtCantidad.Text = datos.getCantidad().ToString();
-            txtPrecio.Text = datos.getPrecio().ToString();
+                MessageBox.Show("Se ha cargado el registro: " + pos + " para su modificación.");
 
-            MessageBox.Show("Se ha cargado el registro: " + pos + " para su modificación.");
-
-            btmFinalizarModifcacion.Enabled = true;
-            btmCargarInicio.Enabled = false;
-            btmCargarFinal.Enabled = false;
-            btmAgregar.Enabled = false;
-            btmEliminar.Enabled = false;
+                btmFinalizarModifcacion.Enabled = true;
+                btmCargarInicio.Enabled = false;
+                btmCargarFinal.Enabled = false;
+                btmAgregar.Enabled = false;
+                btmEliminar.Enabled = false;
+            }
+            catch (Exception m)
+            {
+                MessageBox.Show(m.Message);
+            }
+            
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -329,8 +336,9 @@ namespace ProyectoMatematicasDiscretas
             try
             {
                 //Esta dentro.
+                codigo.verificarPosicion(txtBusqueda.Text);
                 int pos = Int32.Parse(txtBusqueda.Text);
-                pintarEnPantalla(codigo.subirInformacion(Int32.Parse(txtBusqueda.Text)));
+                pintarEnPantalla(codigo.subirInformacion(pos));
 
                 DialogResult result = MessageBox.Show("¿Seguro que desea eliminar el registro actual?", "Eliminar Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
@@ -344,9 +352,9 @@ namespace ProyectoMatematicasDiscretas
                     //no hace nada.
                 }
             }
-            catch
+            catch (Exception m)
             {
-                MessageBox.Show("Ingrese  mayor a 0 y menor a " + codigo.darNumRegistros());
+                MessageBox.Show(m.Message);
             }
             
             /*
@@ -368,7 +376,7 @@ namespace ProyectoMatematicasDiscretas
             {
                 codigo.volcar(openFileDialog1.FileName);
                 actualizarRegistros();
-                //MessageBox.Show("Se ha cargado los registros del archivo: " + openFileDialog1.FileName);
+                MessageBox.Show("Se ha cargado los registros del archivo: " + openFileDialog1.FileName);
             }
         }
 
