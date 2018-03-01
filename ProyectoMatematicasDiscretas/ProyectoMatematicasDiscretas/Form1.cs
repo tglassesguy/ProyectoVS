@@ -374,5 +374,29 @@ namespace ProyectoMatematicasDiscretas
                 pnlCargar.Enabled = true;
             }
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelTitulo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ItemArchivos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ItemListas_Click(object sender, EventArgs e)
+        {
+            Form2 temp = new Form2();
+            temp.Show();
+
+           // this.Hide();
+            
+        }
     }
 }

@@ -36,8 +36,7 @@ namespace ProyectoMatematicasDiscretas
 
         public int darNumRegistros()
         {
-            //try catch, hacer.
-
+     
             FileInfo temp = new FileInfo(darRuta());
             numRegistros = (int)temp.Length / TAM_DATA;
             return numRegistros;
