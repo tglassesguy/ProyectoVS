@@ -8,7 +8,7 @@ using System.IO;
 
 namespace ProyectoMatematicasDiscretas
 {
-    class mundo
+    class Mundo
     {
     
         public static int MAX_NOMBRE = 10;  

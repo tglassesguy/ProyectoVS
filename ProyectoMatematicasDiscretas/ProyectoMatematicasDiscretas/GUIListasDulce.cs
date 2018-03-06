@@ -10,18 +10,19 @@ using System.Windows.Forms;
 
 namespace ProyectoMatematicasDiscretas
 {
-    public partial class Form2 : Form
+    public partial class GUIListasDulce : Form
     {
 
         MundoLista codigo;
 
-        public Form2()
+        public GUIListasDulce()
         {
             InitializeComponent();
         }
 
         private void btmAgregar_Click(object sender, EventArgs e)
         {
+            /*
             try
             {
                 double temp1 = codigo.convertirPrecio(txtPrecio.Text);
@@ -47,10 +48,11 @@ namespace ProyectoMatematicasDiscretas
                 MessageBox.Show(m.Message);
 
             }
+            */
 
         }
 
-        private void limpiar 
+       
 
         private void Form2_Load(object sender, EventArgs e)
         {

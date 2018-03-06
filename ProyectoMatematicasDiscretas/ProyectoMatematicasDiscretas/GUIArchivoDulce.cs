@@ -15,13 +15,13 @@ namespace ProyectoMatematicasDiscretas
 {
     public partial class GUIArchivoDulce : Form
     {
-        mundo codigo;
+        Mundo codigo;
         
 
         public GUIArchivoDulce()
         {
             InitializeComponent();
-            codigo = new mundo();
+            codigo = new Mundo();
  
         }
 
@@ -392,8 +392,6 @@ namespace ProyectoMatematicasDiscretas
 
         private void ItemListas_Click(object sender, EventArgs e)
         {
-            Form2 temp = new Form2();
-            temp.Show();
 
            // this.Hide();
             

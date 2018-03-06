@@ -22,7 +22,6 @@ namespace ProyectoMatematicasDiscretas
         private bool estado;
         private DulceLista siguiente;
 
-
         public DulceLista(String pNombre, DateTime pFecha, int pCantidad, double pPrecio, bool pEstado)
         {
 
@@ -34,7 +33,6 @@ namespace ProyectoMatematicasDiscretas
             siguiente = null;
 
             verificarDatos();
-
         }
 
         public void setSiguiente(DulceLista pDulceLista)
@@ -119,9 +117,5 @@ namespace ProyectoMatematicasDiscretas
                 throw e;
             }
         }
-
-
-
-
     }
 }

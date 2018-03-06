@@ -17,3 +17,5 @@ C:\Users\JUAN FELIPE\ProyectoVS\ProyectoMatematicasDiscretas\ProyectoMatematicas
 C:\Users\JUAN FELIPE\ProyectoVS\ProyectoMatematicasDiscretas\ProyectoMatematicasDiscretas\obj\Debug\ProyectoMatematicasDiscretas.Properties.Resources.resources
 C:\Users\JUAN FELIPE\ProyectoVS\ProyectoMatematicasDiscretas\ProyectoMatematicasDiscretas\obj\Debug\ProyectoMatematicasDiscretas.csproj.GenerateResource.Cache
 C:\Users\JUAN FELIPE\ProyectoVS\ProyectoMatematicasDiscretas\ProyectoMatematicasDiscretas\obj\Debug\ProyectoMatematicasDiscretas.Form2.resources
+C:\Users\javic\Documents\ProyectoVS\ProyectoMatematicasDiscretas\ProyectoMatematicasDiscretas\obj\Debug\ProyectoMatematicasDiscretas.GUIMenu.resources
+C:\Users\javic\Documents\ProyectoVS\ProyectoMatematicasDiscretas\ProyectoMatematicasDiscretas\obj\Debug\ProyectoMatematicasDiscretas.GUIListasDulce.resources
