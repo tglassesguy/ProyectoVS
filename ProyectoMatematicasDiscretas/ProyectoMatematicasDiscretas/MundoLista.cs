@@ -25,9 +25,7 @@ namespace ProyectoMatematicasDiscretas
         public MundoLista(String pRuta)
         {
             ruta = pRuta;
-            numRegistros = 0;
             cabeza = null;
-               
         }
 
         public DulceLista darCabeza()
@@ -35,11 +33,12 @@ namespace ProyectoMatematicasDiscretas
             return cabeza;
         }
 
+        /*
         public void setCabeza(DulceLista pDulcelLista)
         {
             cabeza = pDulcelLista;
         }
-
+        */
 
         public String darRuta()
         {
@@ -49,13 +48,63 @@ namespace ProyectoMatematicasDiscretas
         {
             ruta = pRuta;
         }
-
-        public int darNumRegistros()
+        public double convertirPrecio(String pPrecio)
         {
-            FileInfo temp = new FileInfo(darRuta());
-            numRegistros = (int)temp.Length / TAM_DATA;
-            return numRegistros;
+
+            double resultado;
+
+            try
+            {
+                resultado = Convert.ToDouble(pPrecio);
+            }
+            catch (Exception m)
+            {
+                m = new Exception("Ingresar un valor numérico válido para el precio.");
+                throw m;
+            }
+
+            return resultado;
         }
+
+        public int convertirCantidad(String pCantidad)
+        {
+
+            int resultado;
+
+            try
+            {
+                resultado = Int32.Parse(pCantidad);
+            }
+            catch (Exception m)
+            {
+                m = new Exception("Ingresar un valor numérico válido para la cantidad.");
+                throw m;
+            }
+
+            return resultado;
+        }
+
+        public void guardar(DulceLista pDulceLista)
+        {
+            DulceLista actual = cabeza;
+            if(actual == null)
+            {
+                cabeza = pDulceLista;
+            }
+            else
+            {
+                if(actual.getSiguiente() == null)
+                {
+                    actual.setSiguiente(cabeza);
+                    cabeza = pDulceLista;
+                }
+                else
+                {
+                    actual = actual.getSiguiente();
+                }
+            }         
+        }
+
 
 
     }
