@@ -60,6 +60,8 @@
             this.btmCargarInicio = new System.Windows.Forms.Button();
             this.btmCargarFinal = new System.Windows.Forms.Button();
             this.panelTitulo = new System.Windows.Forms.Panel();
+            this.btmAgregarFinal = new System.Windows.Forms.Button();
+            this.btmAgregarPos = new System.Windows.Forms.Button();
             this.pnlRegistro.SuspendLayout();
             this.pnlCargar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -135,6 +137,8 @@
             // pnlRegistro
             // 
             this.pnlRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(237)))));
+            this.pnlRegistro.Controls.Add(this.btmAgregarPos);
+            this.pnlRegistro.Controls.Add(this.btmAgregarFinal);
             this.pnlRegistro.Controls.Add(this.lblSubtitulo);
             this.pnlRegistro.Controls.Add(this.label1);
             this.pnlRegistro.Controls.Add(this.dtpFecha);
@@ -263,7 +267,7 @@
             // btmAgregar
             // 
             this.btmAgregar.BackColor = System.Drawing.Color.White;
-            this.btmAgregar.Location = new System.Drawing.Point(407, 45);
+            this.btmAgregar.Location = new System.Drawing.Point(407, 24);
             this.btmAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btmAgregar.Name = "btmAgregar";
             this.btmAgregar.Size = new System.Drawing.Size(209, 39);
@@ -406,6 +410,25 @@
             this.panelTitulo.Size = new System.Drawing.Size(642, 102);
             this.panelTitulo.TabIndex = 30;
             // 
+            // btmAgregarFinal
+            // 
+            this.btmAgregarFinal.Location = new System.Drawing.Point(407, 58);
+            this.btmAgregarFinal.Name = "btmAgregarFinal";
+            this.btmAgregarFinal.Size = new System.Drawing.Size(98, 23);
+            this.btmAgregarFinal.TabIndex = 19;
+            this.btmAgregarFinal.Text = "Final";
+            this.btmAgregarFinal.UseVisualStyleBackColor = true;
+            this.btmAgregarFinal.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btmAgregarPos
+            // 
+            this.btmAgregarPos.Location = new System.Drawing.Point(511, 58);
+            this.btmAgregarPos.Name = "btmAgregarPos";
+            this.btmAgregarPos.Size = new System.Drawing.Size(105, 23);
+            this.btmAgregarPos.TabIndex = 20;
+            this.btmAgregarPos.Text = "Pos";
+            this.btmAgregarPos.UseVisualStyleBackColor = true;
+            // 
             // GUIListasDulce
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -471,5 +494,7 @@
         private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Button btmCargarInicio;
         private System.Windows.Forms.Button btmCargarFinal;
+        private System.Windows.Forms.Button btmAgregarPos;
+        private System.Windows.Forms.Button btmAgregarFinal;
     }
 }

@@ -22,6 +22,7 @@ namespace ProyectoMatematicasDiscretas
 
         private void btmAgregar_Click(object sender, EventArgs e)
         {
+
             /*
             try
             {
@@ -62,6 +63,20 @@ namespace ProyectoMatematicasDiscretas
         private void btmRuta_Click(object sender, EventArgs e)
         {
             codigo = new MundoLista(txtRutaArchivo.Text);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            String tempNombre = txtNombre.Text;
+            DateTime tempDate = dtpFecha.Value;
+            int tempCantidad = Int32.Parse(txtCantidad.Text);
+            double tempPrecio = Convert.ToDouble(txtPrecio.Text);
+
+            DulceLista c = new DulceLista(tempNombre,tempDate,tempCantidad, tempPrecio, true);
+
+            codigo.agregarFinal(c);
+
+            MessageBox.Show("Se registrado al final.");
         }
     }
 }

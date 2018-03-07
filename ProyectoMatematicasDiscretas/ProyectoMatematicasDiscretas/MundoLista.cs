@@ -20,17 +20,17 @@ namespace ProyectoMatematicasDiscretas
         private String ruta;
         private int numRegistros;
         FileStream archivo;
-        private DulceLista cabeza;
+        private DulceLista cabecera;
 
         public MundoLista(String pRuta)
         {
             ruta = pRuta;
-            cabeza = null;
+            cabecera = null;
         }
 
         public DulceLista darCabeza()
         {
-            return cabeza;
+            return cabecera;
         }
 
         /*
@@ -86,17 +86,17 @@ namespace ProyectoMatematicasDiscretas
 
         public void guardar(DulceLista pDulceLista)
         {
-            DulceLista actual = cabeza;
+            DulceLista actual = cabecera;
             if(actual == null)
             {
-                cabeza = pDulceLista;
+                cabecera = pDulceLista;
             }
             else
             {
                 if(actual.getSiguiente() == null)
                 {
-                    actual.setSiguiente(cabeza);
-                    cabeza = pDulceLista;
+                    actual.setSiguiente(cabecera);
+                    cabecera = pDulceLista;
                 }
                 else
                 {
@@ -105,7 +105,74 @@ namespace ProyectoMatematicasDiscretas
             }         
         }
 
+        private Boolean comprobarCabeza()
+        {
+            Boolean result = false;
 
+            if(cabecera == null)
+            {
+                result = true;
+            }
 
+            return result;
+               
+        }
+
+        public void agregarFinal(DulceLista pDulceLista)
+        {
+            if (comprobarCabeza())
+            {
+                cabecera = pDulceLista;
+            }
+            else
+            {
+                DulceLista actual = cabecera;
+
+                while (actual.getSiguiente() != null)
+                {
+                    actual = actual.getSiguiente();
+                }
+
+                actual.setSiguiente(pDulceLista);
+            }
+        }
+
+        public void agregarPos(DulceLista pDulceLista, int pos)
+        {
+            DulceLista actual = cabecera;
+
+            int indicador = 0;
+
+            while (indicador < pos)
+            {
+                actual = actual.getSiguiente();
+                indicador++;
+
+            }
+
+            DulceLista tempDulce = actual.getSiguiente();
+            actual.setSiguiente(pDulceLista);
+            actual.getSiguiente().setSiguiente(tempDulce);
+
+          
+
+        }
+        
+        /*
+        private int totalNodos()
+        {
+            int total = 0;
+
+            DulceLista actual = cabecera;
+
+            while(actual.getSiguiente() != null)
+            {
+                total++;
+            }
+
+            return total;
+
+        }
+        */
     }
 }
