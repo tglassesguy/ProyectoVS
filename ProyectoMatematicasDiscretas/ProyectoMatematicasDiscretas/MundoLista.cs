@@ -154,7 +154,6 @@ namespace ProyectoMatematicasDiscretas
             actual.setSiguiente(pDulceLista);
             actual.getSiguiente().setSiguiente(tempDulce);
 
-          
 
         }
         
