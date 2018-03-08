@@ -208,6 +208,7 @@
             this.dtpFecha.Size = new System.Drawing.Size(181, 20);
             this.dtpFecha.TabIndex = 18;
             this.dtpFecha.Value = new System.DateTime(2018, 2, 26, 0, 0, 0, 0);
+            this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
             // 
             // label2
             // 

@@ -18,7 +18,6 @@ namespace ProyectoMatematicasDiscretas
         public static int TAM_DATA = MAX_NOMBRE + MAX_CANTIDAD + MAX_PRECIO + MAX_FECHA;
 
         private String ruta;
-        private int numRegistros;
         FileStream archivo;
         private DulceLista cabecera;
 
@@ -32,13 +31,6 @@ namespace ProyectoMatematicasDiscretas
         {
             return cabecera;
         }
-
-        /*
-        public void setCabeza(DulceLista pDulcelLista)
-        {
-            cabeza = pDulcelLista;
-        }
-        */
 
         public String darRuta()
         {
@@ -83,7 +75,7 @@ namespace ProyectoMatematicasDiscretas
 
             return resultado;
         }
-
+        /*
         public void guardar(DulceLista pDulceLista)
         {
             DulceLista actual = cabecera;
@@ -104,6 +96,7 @@ namespace ProyectoMatematicasDiscretas
                 }
             }         
         }
+        */
 
         private Boolean comprobarCabeza()
         {
@@ -134,26 +127,34 @@ namespace ProyectoMatematicasDiscretas
                 }
 
                 actual.setSiguiente(pDulceLista);
+                actual.getSiguiente().setAnterior(actual);
             }
         }
 
         public void agregarPos(DulceLista pDulceLista, int pos)
         {
             DulceLista actual = cabecera;
+            DulceLista temp;
 
-            int indicador = 0;
-
-            while (indicador <= pos)
+            if(pos == 0)
             {
-                actual = actual.getSiguiente();
-                indicador++;
+                temp = cabecera;
+                cabecera = pDulceLista;
+                cabecera.setSiguiente(temp);
+                return;
             }
 
-            DulceLista tempDulce = actual;
-            actual = pDulceLista;
-            actual.setSiguiente(tempDulce);
+            for(int i = 0; i < pos - 1; i++)
+            {
+                actual = actual.getSiguiente();
+            }
 
-            //TODO- FALLA, ARREGLAR.
+            temp = actual.getSiguiente();
+            actual.setSiguiente(pDulceLista);
+            pDulceLista.setAnterior(actual);
+            pDulceLista.setSiguiente(temp);
+            temp.setAnterior(pDulceLista);
+
         }
 
         public DulceLista cargarNodoFinal()
@@ -191,10 +192,10 @@ namespace ProyectoMatematicasDiscretas
             String resultado = "";
 
             DulceLista actual = cabecera;
-            //comprobar si cabecera está vacia. luego.
+            //TODO - comprobar si cabecera está vacia. luego. 
             while(actual!=null)
             {
-                resultado += actual.getNombre().ToString() + actual.getPrecio().ToString() + actual.getFecha() + actual.getCantidad();
+                resultado += actual.getNombre().ToString() + actual.getPrecio().ToString() + actual.getFecha() + actual.getCantidad() + "|||||";
                 actual = actual.getSiguiente();
             }
 

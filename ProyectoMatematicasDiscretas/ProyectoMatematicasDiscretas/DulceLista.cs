@@ -19,18 +19,18 @@ namespace ProyectoMatematicasDiscretas
         private DateTime fecha;
         private int cantidad;
         private double precio;
-        private bool estado;
         private DulceLista siguiente;
+        private DulceLista anterior;
 
-        public DulceLista(String pNombre, DateTime pFecha, int pCantidad, double pPrecio, bool pEstado)
+        public DulceLista(String pNombre, DateTime pFecha, int pCantidad, double pPrecio)
         {
 
             nombre = pNombre;
             fecha = pFecha;
             cantidad = pCantidad;
             precio = pPrecio;
-            estado = pEstado;
             siguiente = null;
+            anterior = null;
 
             verificarDatos();
         }
@@ -45,10 +45,21 @@ namespace ProyectoMatematicasDiscretas
             return siguiente;
         }
 
+        public void setAnterior(DulceLista pDulceLista)
+        {
+            anterior = pDulceLista;
+        }
+
+        public DulceLista getAnterior()
+        {
+            return anterior;
+        }
+
         public void setNombre(String pNombre)
         {
             nombre = pNombre;
         }
+
         public String getNombre()
         {
             return nombre;
@@ -82,15 +93,6 @@ namespace ProyectoMatematicasDiscretas
         public double getPrecio()
         {
             return precio;
-        }
-
-        public void setEstado(bool pEstado)
-        {
-            estado = pEstado;
-        }
-        public bool getEstado()
-        {
-            return estado;
         }
 
         public void verificarDatos()
