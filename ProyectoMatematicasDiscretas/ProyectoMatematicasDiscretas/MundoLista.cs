@@ -143,7 +143,7 @@ namespace ProyectoMatematicasDiscretas
 
             int indicador = 0;
 
-            while (indicador <= pos-1)
+            while (indicador <= pos)
             {
                 actual = actual.getSiguiente();
                 indicador++;
@@ -152,6 +152,8 @@ namespace ProyectoMatematicasDiscretas
             DulceLista tempDulce = actual;
             actual = pDulceLista;
             actual.setSiguiente(tempDulce);
+
+            //TODO- FALLA, ARREGLAR.
         }
 
         public DulceLista cargarNodoFinal()

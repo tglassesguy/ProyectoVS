@@ -166,6 +166,7 @@
             this.btmAgregarPos.TabIndex = 20;
             this.btmAgregarPos.Text = "Pos";
             this.btmAgregarPos.UseVisualStyleBackColor = true;
+            this.btmAgregarPos.Click += new System.EventHandler(this.btmAgregarPos_Click);
             // 
             // btmAgregarFinal
             // 

@@ -110,5 +110,20 @@ namespace ProyectoMatematicasDiscretas
         {
 
         }
+
+        private void btmAgregarPos_Click(object sender, EventArgs e)
+        {
+            int pos = Int32.Parse(txtBusqueda.Text);
+            String tempNombre = txtNombre.Text;
+            DateTime tempDate = dtpFecha.Value;
+            int tempCantidad = Int32.Parse(txtCantidad.Text);
+            double tempPrecio = Convert.ToDouble(txtPrecio.Text);
+
+            DulceLista c = new DulceLista(tempNombre, tempDate, tempCantidad, tempPrecio, true);
+
+            codigo.agregarPos(c, pos);
+
+            MessageBox.Show("Se registrado en la posición "+ pos);
+        }
     }
 }
