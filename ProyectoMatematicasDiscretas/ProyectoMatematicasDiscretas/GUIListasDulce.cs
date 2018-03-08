@@ -78,5 +78,25 @@ namespace ProyectoMatematicasDiscretas
 
             MessageBox.Show("Se registrado al final.");
         }
+
+        private void btmCargarInicio_Click(object sender, EventArgs e)
+        {
+            DulceLista temp = codigo.darCabeza();
+
+            pintarEnPantalla(temp);
+
+        }
+
+        private void pintarEnPantalla(DulceLista pDulceLista)
+        {
+                
+        }
+
+        private void btmCargarFinal_Click(object sender, EventArgs e)
+        {
+            DulceLista temp = codigo.cargarNodoFinal();
+
+            pintarEnPantalla(temp);
+        }
     }
 }

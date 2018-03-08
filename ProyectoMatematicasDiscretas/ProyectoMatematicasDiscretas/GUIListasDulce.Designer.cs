@@ -36,6 +36,8 @@
             this.txtRutaArchivo = new System.Windows.Forms.TextBox();
             this.labArchivo = new System.Windows.Forms.Label();
             this.pnlRegistro = new System.Windows.Forms.Panel();
+            this.btmAgregarPos = new System.Windows.Forms.Button();
+            this.btmAgregarFinal = new System.Windows.Forms.Button();
             this.lblSubtitulo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
@@ -60,8 +62,6 @@
             this.btmCargarInicio = new System.Windows.Forms.Button();
             this.btmCargarFinal = new System.Windows.Forms.Button();
             this.panelTitulo = new System.Windows.Forms.Panel();
-            this.btmAgregarFinal = new System.Windows.Forms.Button();
-            this.btmAgregarPos = new System.Windows.Forms.Button();
             this.pnlRegistro.SuspendLayout();
             this.pnlCargar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -156,6 +156,25 @@
             this.pnlRegistro.Name = "pnlRegistro";
             this.pnlRegistro.Size = new System.Drawing.Size(642, 147);
             this.pnlRegistro.TabIndex = 31;
+            // 
+            // btmAgregarPos
+            // 
+            this.btmAgregarPos.Location = new System.Drawing.Point(511, 58);
+            this.btmAgregarPos.Name = "btmAgregarPos";
+            this.btmAgregarPos.Size = new System.Drawing.Size(105, 23);
+            this.btmAgregarPos.TabIndex = 20;
+            this.btmAgregarPos.Text = "Pos";
+            this.btmAgregarPos.UseVisualStyleBackColor = true;
+            // 
+            // btmAgregarFinal
+            // 
+            this.btmAgregarFinal.Location = new System.Drawing.Point(407, 58);
+            this.btmAgregarFinal.Name = "btmAgregarFinal";
+            this.btmAgregarFinal.Size = new System.Drawing.Size(107, 23);
+            this.btmAgregarFinal.TabIndex = 19;
+            this.btmAgregarFinal.Text = "Final";
+            this.btmAgregarFinal.UseVisualStyleBackColor = true;
+            this.btmAgregarFinal.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblSubtitulo
             // 
@@ -388,6 +407,7 @@
             this.btmCargarInicio.TabIndex = 4;
             this.btmCargarInicio.Text = "Inicio";
             this.btmCargarInicio.UseVisualStyleBackColor = false;
+            this.btmCargarInicio.Click += new System.EventHandler(this.btmCargarInicio_Click);
             // 
             // btmCargarFinal
             // 
@@ -399,6 +419,7 @@
             this.btmCargarFinal.TabIndex = 1;
             this.btmCargarFinal.Text = "Final";
             this.btmCargarFinal.UseVisualStyleBackColor = false;
+            this.btmCargarFinal.Click += new System.EventHandler(this.btmCargarFinal_Click);
             // 
             // panelTitulo
             // 
@@ -409,25 +430,6 @@
             this.panelTitulo.Name = "panelTitulo";
             this.panelTitulo.Size = new System.Drawing.Size(642, 102);
             this.panelTitulo.TabIndex = 30;
-            // 
-            // btmAgregarFinal
-            // 
-            this.btmAgregarFinal.Location = new System.Drawing.Point(407, 58);
-            this.btmAgregarFinal.Name = "btmAgregarFinal";
-            this.btmAgregarFinal.Size = new System.Drawing.Size(98, 23);
-            this.btmAgregarFinal.TabIndex = 19;
-            this.btmAgregarFinal.Text = "Final";
-            this.btmAgregarFinal.UseVisualStyleBackColor = true;
-            this.btmAgregarFinal.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btmAgregarPos
-            // 
-            this.btmAgregarPos.Location = new System.Drawing.Point(511, 58);
-            this.btmAgregarPos.Name = "btmAgregarPos";
-            this.btmAgregarPos.Size = new System.Drawing.Size(105, 23);
-            this.btmAgregarPos.TabIndex = 20;
-            this.btmAgregarPos.Text = "Pos";
-            this.btmAgregarPos.UseVisualStyleBackColor = true;
             // 
             // GUIListasDulce
             // 

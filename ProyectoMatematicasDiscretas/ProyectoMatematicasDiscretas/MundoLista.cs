@@ -143,7 +143,7 @@ namespace ProyectoMatematicasDiscretas
 
             int indicador = 0;
 
-            while (indicador < pos)
+            while (indicador <= pos-1)
             {
                 actual = actual.getSiguiente();
                 indicador++;
@@ -155,6 +155,25 @@ namespace ProyectoMatematicasDiscretas
             actual.getSiguiente().setSiguiente(tempDulce);
 
 
+        }
+
+        public DulceLista cargarNodoFinal()
+        {
+            DulceLista resultado;
+            if(comprobarCabeza())
+            {
+                resultado = null;
+            }
+            else
+            {
+                resultado = cabecera;
+
+                while(resultado.getSiguiente() != null)
+                {
+                    resultado = resultado.getSiguiente();
+                }
+            }
+            return resultado;
         }
         
         /*
