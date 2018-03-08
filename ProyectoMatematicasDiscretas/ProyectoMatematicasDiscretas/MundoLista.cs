@@ -153,8 +153,6 @@ namespace ProyectoMatematicasDiscretas
             DulceLista tempDulce = actual.getSiguiente();
             actual.setSiguiente(pDulceLista);
             actual.getSiguiente().setSiguiente(tempDulce);
-
-
         }
 
         public DulceLista cargarNodoFinal()
@@ -175,22 +173,10 @@ namespace ProyectoMatematicasDiscretas
             }
             return resultado;
         }
-        
-        /*
-        private int totalNodos()
+
+        private void polloLoMama()
         {
-            int total = 0;
-
-            DulceLista actual = cabecera;
-
-            while(actual.getSiguiente() != null)
-            {
-                total++;
-            }
-
-            return total;
-
+            String perra = "Ce mamo";
         }
-        */
     }
 }
