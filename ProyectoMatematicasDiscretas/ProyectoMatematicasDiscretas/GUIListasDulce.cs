@@ -18,6 +18,7 @@ namespace ProyectoMatematicasDiscretas
         public GUIListasDulce()
         {
             InitializeComponent();
+            codigo = new MundoLista();
         }
 
         private void btmAgregar_Click(object sender, EventArgs e)
@@ -62,7 +63,7 @@ namespace ProyectoMatematicasDiscretas
 
         private void btmRuta_Click(object sender, EventArgs e)
         {
-            codigo = new MundoLista(txtRutaArchivo.Text);
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -97,6 +98,17 @@ namespace ProyectoMatematicasDiscretas
             DulceLista temp = codigo.cargarNodoFinal();
 
             pintarEnPantalla(temp);
+        }
+
+        private void btmGuardar_Click(object sender, EventArgs e)
+        {
+            codigo.guardar("D:/lol.txt");
+            MessageBox.Show("SOMEBODY TOCHA MY SPAGHET");
+        }
+
+        private void pnlRegistro_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

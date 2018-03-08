@@ -22,9 +22,9 @@ namespace ProyectoMatematicasDiscretas
         FileStream archivo;
         private DulceLista cabecera;
 
-        public MundoLista(String pRuta)
+        public MundoLista() //Establecer el parámetro ruta luego.
         {
-            ruta = pRuta;
+            /*ruta = pRuta;*/
             cabecera = null;
         }
 
@@ -147,12 +147,11 @@ namespace ProyectoMatematicasDiscretas
             {
                 actual = actual.getSiguiente();
                 indicador++;
-
             }
 
-            DulceLista tempDulce = actual.getSiguiente();
-            actual.setSiguiente(pDulceLista);
-            actual.getSiguiente().setSiguiente(tempDulce);
+            DulceLista tempDulce = actual;
+            actual = pDulceLista;
+            actual.setSiguiente(tempDulce);
         }
 
         public DulceLista cargarNodoFinal()
@@ -174,9 +173,30 @@ namespace ProyectoMatematicasDiscretas
             return resultado;
         }
 
-        private void polloLoMama()
+        public void guardar(String ruta)
         {
-            String perra = "Ce mamo";
+            String data = persistencia();
+
+            archivo = new FileStream(ruta, FileMode.Open);
+
+            archivo.Seek(0, SeekOrigin.Begin);
+            archivo.Write(Encoding.ASCII.GetBytes(data), 0, data.Length);
+            archivo.Close();
+        }
+
+        public String persistencia()
+        {
+            String resultado = "";
+
+            DulceLista actual = cabecera;
+            //comprobar si cabecera está vacia. luego.
+            while(actual!=null)
+            {
+                resultado += actual.getNombre().ToString() + actual.getPrecio().ToString() + actual.getFecha() + actual.getCantidad();
+                actual = actual.getSiguiente();
+            }
+
+            return resultado;
         }
     }
 }

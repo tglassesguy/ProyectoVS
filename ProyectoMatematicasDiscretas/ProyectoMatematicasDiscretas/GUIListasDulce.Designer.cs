@@ -62,6 +62,7 @@
             this.btmCargarInicio = new System.Windows.Forms.Button();
             this.btmCargarFinal = new System.Windows.Forms.Button();
             this.panelTitulo = new System.Windows.Forms.Panel();
+            this.btmGuardar = new System.Windows.Forms.Button();
             this.pnlRegistro.SuspendLayout();
             this.pnlCargar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -151,11 +152,11 @@
             this.pnlRegistro.Controls.Add(this.txtPrecio);
             this.pnlRegistro.Controls.Add(this.btmFinalizarModifcacion);
             this.pnlRegistro.Controls.Add(this.btmAgregar);
-            this.pnlRegistro.Enabled = false;
             this.pnlRegistro.Location = new System.Drawing.Point(-4, 173);
             this.pnlRegistro.Name = "pnlRegistro";
             this.pnlRegistro.Size = new System.Drawing.Size(642, 147);
             this.pnlRegistro.TabIndex = 31;
+            this.pnlRegistro.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlRegistro_Paint);
             // 
             // btmAgregarPos
             // 
@@ -306,7 +307,6 @@
             this.pnlCargar.Controls.Add(this.txtBusqueda);
             this.pnlCargar.Controls.Add(this.btmCargarInicio);
             this.pnlCargar.Controls.Add(this.btmCargarFinal);
-            this.pnlCargar.Enabled = false;
             this.pnlCargar.Location = new System.Drawing.Point(-4, 319);
             this.pnlCargar.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCargar.Name = "pnlCargar";
@@ -431,11 +431,22 @@
             this.panelTitulo.Size = new System.Drawing.Size(642, 102);
             this.panelTitulo.TabIndex = 30;
             // 
+            // btmGuardar
+            // 
+            this.btmGuardar.Location = new System.Drawing.Point(23, 608);
+            this.btmGuardar.Name = "btmGuardar";
+            this.btmGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btmGuardar.TabIndex = 38;
+            this.btmGuardar.Text = "Guardar";
+            this.btmGuardar.UseVisualStyleBackColor = true;
+            this.btmGuardar.Click += new System.EventHandler(this.btmGuardar_Click);
+            // 
             // GUIListasDulce
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(639, 642);
+            this.Controls.Add(this.btmGuardar);
             this.Controls.Add(this.btmVolcarDesorden);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -498,5 +509,6 @@
         private System.Windows.Forms.Button btmCargarFinal;
         private System.Windows.Forms.Button btmAgregarPos;
         private System.Windows.Forms.Button btmAgregarFinal;
+        private System.Windows.Forms.Button btmGuardar;
     }
 }
