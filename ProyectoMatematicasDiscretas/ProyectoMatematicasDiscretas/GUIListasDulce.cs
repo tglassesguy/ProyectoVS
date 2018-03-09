@@ -23,38 +23,32 @@ namespace ProyectoMatematicasDiscretas
 
         private void btmAgregar_Click(object sender, EventArgs e)
         {
-
-            /*
-            try
+            DulceLista c = generarDulce();
+            if(c != null)
             {
-                double temp1 = codigo.convertirPrecio(txtPrecio.Text);
-                int temp2 = codigo.convertirCantidad(txtCantidad.Text);
-
-                DulceLista t = new DulceLista(txtNombre.Text, dtpFecha.Value, temp2, temp1, true);
-
-                codigo.guardar(t);
-                actualizarRegistros();
-                limpiar();
-
-                if (!pnlCargar.Enabled)
-                {
-                    pnlCargar.Enabled = true;
-                    pintarEnPantalla(codigo.subirInformacion(1));
-                }
-
-                MessageBox.Show("Se ha guardado el registro");
+                codigo.agregarPos(c ,0);
+                MessageBox.Show("Se ha agregado al nodo inicial.");
             }
-            catch (Exception m)
-            {
-
-                MessageBox.Show(m.Message);
-
-            }
-            */
-
         }
 
-       
+        private DulceLista generarDulce()
+        {
+            try
+            {
+                String tempNombre = txtNombre.Text;
+                DateTime tempDate = dtpFecha.Value;
+                int tempCantidad = codigo.convertirCantidad(txtCantidad.Text);
+                double tempPrecio = codigo.convertirPrecio(txtPrecio.Text);
+
+                return new DulceLista(tempNombre, tempDate, tempCantidad, tempPrecio);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                return null;
+            }
+
+        }
 
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -67,17 +61,13 @@ namespace ProyectoMatematicasDiscretas
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            String tempNombre = txtNombre.Text;
-            DateTime tempDate = dtpFecha.Value;
-            int tempCantidad = Int32.Parse(txtCantidad.Text);
-            double tempPrecio = Convert.ToDouble(txtPrecio.Text);
-
-            DulceLista c = new DulceLista(tempNombre,tempDate,tempCantidad, tempPrecio, true);
-
-            codigo.agregarFinal(c);
-
-            MessageBox.Show("Se registrado al final.");
+        {    
+            DulceLista c = generarDulce();
+            if(c != null)
+            {
+                codigo.agregarFinal(c);
+                MessageBox.Show("Se registrado al final.");
+            }   
         }
 
         private void btmCargarInicio_Click(object sender, EventArgs e)
@@ -114,16 +104,26 @@ namespace ProyectoMatematicasDiscretas
         private void btmAgregarPos_Click(object sender, EventArgs e)
         {
             int pos = Int32.Parse(txtBusqueda.Text);
-            String tempNombre = txtNombre.Text;
-            DateTime tempDate = dtpFecha.Value;
-            int tempCantidad = Int32.Parse(txtCantidad.Text);
-            double tempPrecio = Convert.ToDouble(txtPrecio.Text);
 
-            DulceLista c = new DulceLista(tempNombre, tempDate, tempCantidad, tempPrecio, true);
+            DulceLista c = generarDulce();
 
-            codigo.agregarPos(c, pos);
-
-            MessageBox.Show("Se registrado en la posición "+ pos);
+            if(c !=null)
+            {
+                codigo.agregarPos(c, pos);
+                MessageBox.Show("Se registrado en la posición " + pos);
+            }
+            
         }
+
+        private void dtpFecha_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        /*
+         * To-Do List
+         * 
+         * TODO - Comprobar la fecha (no permitir ingresar fechas a partir mañana).
+         */
     }
 }
